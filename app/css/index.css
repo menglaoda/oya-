@@ -63,3 +63,7 @@
   padding: 0 5px;
   color: #f1286a;
 }
+
+.footer ul li:nth-child(1) a {
+  color: #8E488E;
+}

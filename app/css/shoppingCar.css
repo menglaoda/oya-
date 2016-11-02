@@ -154,6 +154,7 @@ body {
 .footer {
   border-top: 1px solid #8e488e;
   color: white;
+  padding: 0;
   box-sizing: border-box;
 }
 
