@@ -108,12 +108,12 @@ $(function($) {
 	var datalist = localStorage.getItem('datalist');//这里得到的有可能为null
 	datalist = datalist ? JSON.parse(datalist) : [];
 	
+	$input.eq(6).on('singleTap',function(){
 	if($input.eq(0).val() == '' || $input.eq(1).val() == '' || $input.eq(2).val() == '' || $input.eq(3).val() == '' || $input.eq(4).val() == '' || $input.eq(5).val() == ''){
 	    otext.html('写完再走！');	
 	
 	
 	}else{
-		$input.eq(6).on('click',function(){
 		
 		var data = {};
 		
@@ -126,6 +126,6 @@ $(function($) {
 		datalist.push(data);
 		
 		localStorage.setItem('datalist',JSON.stringify(datalist));
-	})
 	}
+	})
 });
