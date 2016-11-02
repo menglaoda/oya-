@@ -9,7 +9,7 @@
     bottom: 60px;
     text-align: center;
     line-height: 50px;
-    font-size: 20px;
+    font-size: 6vw;
     color: #fff;
     opacity: 0.7;
     display: none;
@@ -20,24 +20,21 @@
     .swiper-slide img {
         width: 100%;
     }
+    img{
+        width: 100%;
+    }
     /*更改分页按钮样式*/
     .swiper-pagination .swiper-pagination-bullet {
         background: #FE6C9C;
-        width: 5px;
-        height: 5px;
+        width: 1.5vw;
+        height: 1.5vw;
     }
     /*商品介绍*/
     .codes {
-        header img {
-            width: 100%;
-        }
         .content {
             a {
                 display: block;
                 width: 100%;
-                img {
-                    width: 100%;
-                }
             }
             .col-xs-6,.col-xs-12{
                 padding: 3px;

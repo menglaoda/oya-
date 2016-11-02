@@ -182,7 +182,6 @@ exports.types = {
 	var n = 0;  //初始化懒加载的次数
 	//滚动事件触动懒加载
 	$(window).on('scroll',function(){
-		console.log(1);
 		var scrollTop = $(window).scrollTop();   //滚动条距离顶部的距离
 		if(scrollTop >= $(document).height()-$(window).height() - 100){  //当滚动条快到底部时
 			n++;
