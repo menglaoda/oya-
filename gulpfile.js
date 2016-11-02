@@ -53,7 +53,7 @@ gulp.task('buildhtml',function(){
 	.pipe(htmlmin({
 		collapseWhitespace:true
 	}))
-	.pipe(gulp.dest('./dest/'));
+	.pipe(gulp.dest('./dist/'));
 });
 
 //全站编译

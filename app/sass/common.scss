@@ -1,7 +1,11 @@
+/*清除样式*/
 *{margin: 0;padding: 0;}
 html,
 body {
     height: 100%;
+}
+ul,li{
+    list-style: none;
 }
 body {
     font-family: 'Microsoft YaHei',"Comic Sans MS","幼圆","黑体",sans-serif;
@@ -40,3 +44,34 @@ body {
         left: 5px;
     }
 }
+/*尾部*/
+.footer {
+    z-index: 100;
+    height: 54px;
+    position: fixed;
+    background: #fff;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    padding: 5px 0;
+    box-sizing: border-box;
+    border-top: solid 1px #cccccc;
+    border-bottom: solid 1px #cccccc;
+    ul{
+        flex: 1;
+        display: flex;
+        li{
+            text-align: center;
+            flex: 1;
+            a{
+                color: #333;
+                text-decoration: none;
+                p{
+                    margin-top: 3px;
+                    flex: 1;
+                }
+            }
+        }
+        
+    }
+  }

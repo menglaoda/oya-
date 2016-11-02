@@ -10,7 +10,7 @@
   bottom: 60px;
   text-align: center;
   line-height: 50px;
-  font-size: 20px;
+  font-size: 6vw;
   color: #fff;
   opacity: 0.7;
   display: none;
@@ -27,22 +27,18 @@
   width: 100%;
 }
 
-.body-container .swiper-pagination .swiper-pagination-bullet {
-  background: #FE6C9C;
-  width: 5px;
-  height: 5px;
+.body-container img {
+  width: 100%;
 }
 
-.body-container .codes header img {
-  width: 100%;
+.body-container .swiper-pagination .swiper-pagination-bullet {
+  background: #FE6C9C;
+  width: 1.5vw;
+  height: 1.5vw;
 }
 
 .body-container .codes .content a {
   display: block;
-  width: 100%;
-}
-
-.body-container .codes .content a img {
   width: 100%;
 }
 
@@ -62,4 +58,8 @@
 .body-container .codes .content .fix .products .price {
   padding: 0 5px;
   color: #f1286a;
+}
+
+.footer ul li:nth-child(1) a {
+  color: #8E488E;
 }
