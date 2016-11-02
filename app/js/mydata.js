@@ -113,8 +113,7 @@ $(function($) {
 	    otext.html('写完再走！');	
 	
 	
-	}else{
-		
+	}else{		
 		var data = {};
 		
 		data.name = $input.eq(0).val();
