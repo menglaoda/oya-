@@ -87,11 +87,11 @@
 	});
 	//更改本地存储
 	function local(){
-		arr = JSON.parse(localStorage.getItem('shopping'));
+		arr = JSON.parse(localStorage.getItem('shoppingCar'));
 		for(var i in arr){  //遍历localStorage数组更改商品数量
 			if(arr[i].title == $(this).closest('li').find('.title').html()){
 				arr[i].count = $count;
-				localStorage.setItem('shopping',JSON.stringify(arr));
+				localStorage.setItem('shoppingCar',JSON.stringify(arr));
 			}
 		}
 	}
@@ -102,11 +102,11 @@
 		var $total=$('span','.pay').html() - $count;
 		$('span','.pay').html($total);
 		//更改本地存储
-		arr = JSON.parse(localStorage.getItem('shopping'));
+		arr = JSON.parse(localStorage.getItem('shoppingCar'));
 		for(var i in arr){  //遍历localStorage数组更改商品数量
 			if(arr[i].title == $(this).closest('li').find('.title').html()){
 				arr.splice(i,1);
-				localStorage.setItem('shopping',JSON.stringify(arr));
+				localStorage.setItem('shoppingCar',JSON.stringify(arr));
 			}
 		}
 	});
