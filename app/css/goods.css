@@ -1,0 +1,109 @@
+*{
+	margin: 0;padding: 0;
+}
+ul,li{
+	list-style: none;
+}
+.swiper-container {
+	margin-top: 60px;
+	width: 100%;
+   height: 300px;
+    }
+.swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+
+.xinxi p{
+	height: 25px;line-height: 25px;font-weight: bold;color: #616b7f;
+}
+.xinxi .price{color: #e80080;}
+.space{
+	height: 10px;
+	background: #f1f5f6;
+}
+.wenzi p{color:#999;}
+.wenzi p span{
+	font-size: 18px;
+	font-weight: bold;
+	color: #000;
+}
+.goods-img li img{width: 100%;height:100%}
+
+/*脚部*/
+
+.footer {
+  border-top: 1px solid #8e488e;
+  color: white;
+  box-sizing: border-box;
+}
+
+.footer div:nth-child(n) {
+  height: 54px;
+  line-height: 54px;
+  text-align: center;
+}
+
+.footer .allPick {
+  color: black;
+}
+
+.footer .allPick .col-xs-6 {
+  padding: 0;
+}
+
+.footer .allPick .choice {
+  position: relative;
+  /*复选框被选中*/
+}
+
+.footer .allPick .choice input:nth-child(n) {
+  position: absolute;
+}
+
+.footer .allPick .choice span {
+  position: absolute;
+  display: block;
+  top: 50%;
+  margin-top: -9px;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  background: url(../img/noPick.png);
+}
+
+.footer .allPick .choice .pic {
+  background: url(../img/tick.png);
+}
+
+.footer .allPick .choice .che {
+  z-index: 100;
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  margin-top: -8px;
+  opacity: 0;
+}
+
+.footer .payMethod {
+  background: #dd3d97;
+}
+
+.footer .pay {
+  background: #8e488e;
+}
