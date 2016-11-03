@@ -2,16 +2,26 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title>我的订单</title>
-		<link rel="stylesheet" href="../tubiao/iconfont.css">
+
+		<link rel="stylesheet" href="../assets/grfont/iconfont.css" />
 		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link rel="stylesheet" href="../assets/fontAwesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="../css/common.css" />
 		<link type="text/css" rel="stylesheet" href="../css/style.css" />
+		
+		<script src="../assets/zepto/dist/zepto.js"></script>
+		<script src="../assets/zepto/src/touch.js"></script>
+		<script src="../js/submit.js"></script>
+		
 	</head>
 	<body>
+		<!--头部-->
 		<header class="header">
-				<span class="iconfont icon-left"></span>
-				<span>我的订单</span>
-			    <span class="iconfont icon-caidan"></span>
+			<i class="fa fa-angle-left" id="memu-left"></i>
+			<div class="title">我的订单</div>
+			<i class="fa fa-list-ul" id="memu-list"></i>
 		</header>
 		<nav class="nav">
 			<ul>
@@ -24,39 +34,40 @@
 		</nav>
 		<section class="DDsection">
 			<!--插入-->
-			<div class="dingdan1">
+			<!--<div class="dingdan1">
                 <div class="dingdan1_1">
-                	<span>店铺1</span><span>交易成功</span>
+                	<span class="span1">店铺1</span ><span class="span2">交易成功</span>
                 </div>		
                 <div class="dingdan1_2">
                 	<div class="dingdan1_2_1">
-                		<img src="../img/56.jpg"/>
+                		<img class="oimg" src="../img/56.jpg"/>
                 	</div>
                 	<div class="dingdan1_2_2">
                 		<h2>物品名称</h2>
-                		<span>单价</span>
-                		<span>数量</span>
+                		<span class="span3">单价</span>
+                		<span class="span4">数量</span>
                 	</div>
                 </div>	
                 <div class="dingdan1_3">
                 	<h3 class="hh3">共<b>2</b>件商品：合计<span>￥240</span></h3>
                 </div>	
                 <div class="dingdan1_4">
-                	<span>
-	                	 <button>付款</button>
-	                	 <button>删除订单</button>
-	                	 <button>查看物流</button>
+                	<span class="span5">
+	                	 <button class="button1">付款</button>
+	                	 <button class="button1">删除订单</button>
+	                	 <button class="button1">查看物流</button>
                 	</span>
                 </div>	
-			</div>
+			</div>-->
 		</section>
+		<!--脚部-->
 		<footer class="footer">
 			<ul>
-				<li><a><span><span class = "iconfont icon-shouye"></span><p>首页</p></a></li>
-				<li><a><span><span class = "iconfont icon-jifen"></span><p>积分区</p></a></li>
-				<li><a><span><span class = "iconfont icon-fenlei"></span><p>分类</p></a></li>
-				<li><a><span><span class = "iconfont icon-gouwuche"></span><p>购物车</p></a></li>
-				<li><a><span><span class = "iconfont icon-geren"></span><p>个人中心</p></a></li>
+				<li><a href="../index.html"><span><span class = "iconfont icon-shouye"></span><p>首页</p></a></li>
+				<li><a href="#"><span><span class = "iconfont icon-jifen"></span><p>积分区</p></a></li>
+				<li><a href="html/list.html"><span><span class = "iconfont icon-fenlei"></span><p>分类</p></a></li>
+				<li><a href="html/shoppingCar.html"><span><span class = "iconfont icon-gouwuche"></span><p>购物车</p></a></li>
+				<li><a href="html/zhongxin.html"><span><span class = "iconfont icon-geren"></span><p>个人中心</p></a></li>
 			</ul>
 		</footer>
 	</body>

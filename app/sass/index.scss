@@ -1,0 +1,60 @@
+/*回到顶部*/
+.scroll_top {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: #e80080;
+    position: fixed;
+    right: 15px;
+    bottom: 60px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 6vw;
+    color: #fff;
+    opacity: 0.7;
+    display: none;
+}
+/*主体内容*/
+.body-container {
+    margin: 48px 0 54px;
+    .swiper-slide img {
+        width: 100%;
+    }
+    img{
+        width: 100%;
+    }
+    /*更改分页按钮样式*/
+    .swiper-pagination .swiper-pagination-bullet {
+        background: #FE6C9C;
+        width: 1.5vw;
+        height: 1.5vw;
+    }
+    /*商品介绍*/
+    .codes {
+        .content {
+            a {
+                display: block;
+                width: 100%;
+            }
+            .col-xs-6,.col-xs-12{
+                padding: 3px;
+            }
+            .fix {
+                padding: 5px 0;
+                .products{
+                    .pro-title {
+                        color: #999;
+                        padding: 0 5px;
+                    }
+                    .price {
+                        padding: 0 5px;
+                        color: #f1286a;
+                    }
+                }
+            }
+        }
+    }
+}
+.footer ul li:nth-child(1) a{
+    color: #8E488E;
+}
