@@ -15,15 +15,14 @@ $(function($) {
 			var txt = $input.eq(0).val();
 
 			if(txt == '') {
-				otext.html('你的小昵称呢？');
+				otext.html('昵称不能为空！');
 			} else {
 				var pattern = /^.{2,10}/;
 				var otxt = pattern.test(txt);
 
 				if(otxt) {
-					otext.html('帅气的小名');
+                    otext.html('');
 				} else {
-					otext.html('什么玩意！');
 					$input.eq(1).val('');
 				}
 			}
@@ -33,14 +32,13 @@ $(function($) {
 		var num = $input.eq(1).val();
 
 		if(num == '') {
-			otext.html('你的telephone number 呢？');
+			otext.html('填写手机号。');
 		} else {
 			var pattern = /^(134|155|180|150|138|156)\d{8}$/;
 			var oname = pattern.test(num);
 			if(oname) {
-				otext.html('可以可以！');
+				 otext.html('');
 			} else {
-				otext.html('错了错了，没有你这手机号');
 				$input.eq(1).val('');
 			}
 		}
@@ -53,43 +51,31 @@ $(function($) {
 			//			console.log(res);
 			//遍历第一遍
 			$.each(res, function(idx, item) {
-				//<option value="广东" label="大陆">广东</option>
 				//遍历第二遍，得出省份并创建
 				$.each(item, function(idx, name) {
-					//					console.log(name);
 					var $sheng_name = $('<option/>');
-					$sheng_name.attr({
-						value: name.name
-					}).html(name.name).appendTo($shenglist);
+					$sheng_name.attr({value: name.name}).html(name.name).appendTo($shenglist);
 
 					$shi.on('focus', function() {
 						var $sheng_txt = $sheng.val();
 						//获取选择的省份匹配相等得出idx
 						if(name.name == $sheng_txt) {
-							console.log(item[idx]);
 							$shilist.empty();
 							//遍历第三遍取到的下标idx，遍历regions得出其全部的市
 							$.each(item[idx].regions, function(idx, shi) {
 								var $shi_name = $('<option/>');
-								$shi_name.attr({
-									value: shi.name
-								}).html(shi.name).appendTo($shilist);
-								//console.log(shi);
+								$shi_name.attr({value: shi.name}).html(shi.name).appendTo($shilist);
 
 								$xian.on('focus', function() {
 									var $shi_txt = $shi.val();
 									//获取选择的市匹配相等得出idx
 									if(shi.name == $shi_txt) {
 										$xianlist.empty();
-							    	    //console.log(item[idx].regions[idx]);
-										//console.log(shi.name);
 										//遍历第四遍，得出所包含的县并创建
 										$.each(shi.regions, function(idx, xian) {
 											var $xian_name = $('<option/>');
 
-											$xian_name.attr({
-												value: xian.name
-											}).html(xian.name).appendTo($xianlist);
+											$xian_name.attr({value: xian.name}).html(xian.name).appendTo($xianlist);
 										})
 									}
 
