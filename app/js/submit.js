@@ -113,13 +113,11 @@
                 
                 //点击取消订单
 //              var btn2 = $(".button2");
-                
-                
-                
+                    
                 $buttom2.on("singleTap",function(){
                 	console.log("aa");
                 	$buttom2.closest($dingdan1).remove();
-              	localStorage.removeItem("order");
+              	   localStorage.removeItem("order");
                  
                 })
                 

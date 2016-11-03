@@ -15,7 +15,9 @@
 		
 		//商品图片
 		var img = $('<div/>').addClass('goods col-xs-2');
-		$('<img/>').attr('src',arr[i].img).appendTo(img);
+		$a = $('<a/>').attr('href','goods.html');
+		$('<img/>').attr('src',arr[i].img).appendTo($a);
+		$a.appendTo(img);
 		img.appendTo(li);
 		
 		//商品标题和价格
@@ -110,6 +112,9 @@
 			if(arr[i].title == $(this).closest('li').find('.title p').html()){
 				arr.splice(i,1);
 				localStorage.setItem('shoppingCar',JSON.stringify(arr));
+				//更改购物车总数
+				var a = JSON.parse(localStorage.getItem('count'));
+				localStorage.setItem('count',--a);
 			}
 		}
 	});
