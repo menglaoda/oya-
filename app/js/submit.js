@@ -4,7 +4,9 @@
 	var shuju = JSON.parse(localStorage.getItem("order"));
 //	    console.log(shuju);
 	$.each(shuju,function(idx,item) {
+		
 		$.each(item.goods, function(idx,item) {
+			console.log(idx);
 			console.log(item.price);
 			
 				var $dingdan1 = $("<div></div>");
