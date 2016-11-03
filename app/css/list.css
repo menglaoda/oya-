@@ -1,10 +1,7 @@
-*{
-	margin: 0;padding: 0;
+.boxx{
+	margin: 48px 0 54px;
+	overflow: hidden;
 }
-ul,li{
-	list-style: none;
-}
-
 .list{
 	float: left;
 	background:#f1f5f6;
@@ -48,13 +45,12 @@ ul,li{
 }
 /*热门品牌*/
 .list-Img h4{
-	
 	line-height: 40px;
 	text-align: left;
 	background:#f1f5f6;
+	margin: 0;
 }
 .list-Img .allUl {
-	
 	width: 100%;
 	display: block;
 	overflow: hidden;
