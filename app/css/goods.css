@@ -1,0 +1,190 @@
+*{
+	margin: 0;padding: 0;
+}
+ul,li{
+	list-style: none;
+}
+/*头部*/
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 48px;
+  line-height: 48px;
+  left: 0;
+  z-index: 100;
+  background-color: #8E488E;
+  color: #fff;
+ 
+}
+.goods{
+  display:block;
+}
+
+.comment-list{
+ /* display:none;*/
+}
+/*头部*/
+.title1,.title2{
+  position: absolute;
+  left: 40%;
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  width: 73px;
+}
+.active{
+  background: #fff;
+  color: #000;
+}
+.title1{
+ left: 33%;
+}
+.title2{
+ left: 50%;
+}
+.header #memu-list, .header #memu-left {
+  font-size: 20px;
+  padding: 0 6px;
+  position: absolute;
+  right: 5px;
+  height: 48px;
+  line-height: 48px;
+  cursor: pointer;
+
+}
+.col-xs-3{ background: #fff; }
+
+.header #memu-left {
+  right: 0;
+  left: 5px;
+}
+/*轮播*/
+.swiper-container {
+	margin-top: 60px;
+	width: 100%;
+   height: 300px;
+    }
+.swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+}
+.xinxi p{
+	height: 25px;line-height: 25px;font-weight: bold;color: #616b7f;
+}
+.xinxi .price{color: #e80080;}
+.space{
+	height: 10px;
+	background: #f1f5f6;
+}
+.wenzi p{color:#999;}
+.wenzi p span{
+	font-size: 18px;
+	font-weight: bold;
+	color: #000;
+}
+.goods-img li img{width: 100%;height:100%}
+/*评论*/
+.comment-list{
+  font-size: 20px;
+  position: absolute;
+  top:50px;
+}
+.comment-list .comment-content{
+  background: #fff;
+  overflow: hidden;
+  margin-top: 10px;
+}
+.comment-list .comment-content .user{
+  border-bottom: solid 1px #ccc;
+  padding: 5px 10px;
+  overflow: hidden;
+ /* display: flex;*/
+  align-items: center;
+}
+.comment-list .comment-content .user span{
+   margin-left: 10px;
+}
+.comment-list .comment-content .user .col-xs-6{
+  padding: 0;
+}
+.comment-list .comment-content .user .col-xs-6:last-child{
+  text-align: right;
+  color: #999;
+}
+.comment-list .comment-content .user img{
+        width: 80px;
+        border-radius: 50%;
+      }
+.comment-list .content-txt .glyphicon{
+        color: #f00;
+        padding: 0 1px;
+      }
+.comment-list .content-txt .buyTime{
+        font-style: normal;
+        color: #999;
+      }
+
+
+
+/*脚部*/
+.footer {
+  border-top: 1px solid #8e488e;
+  color: white;
+  box-sizing: border-box;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.footer div:nth-child(n) {
+  height: 54px;
+  line-height: 54px;
+  text-align: center;
+}
+/*购物车*/
+.footer .allPick .glyphicon{
+  position: relative;
+  bottom: 0;
+  color:#8e488e;font-size:35px;
+
+}
+.allPick .glyphicon span{
+  position: absolute;
+  display: block;
+  top:1px;
+  left: 20px;
+  font-size: 13px;
+  line-height: 20px;
+  width: 20px;
+  height: 20px;
+  border-radius:30%;
+  background: #8e488e;
+  color: #fff;
+}
+.footer .payMethod {
+  background: #dd3d97;
+}
+
+.footer .pay {
+  
+  background: #8e488e;
+}
+.footer .pay a{color:#fff;}
