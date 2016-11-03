@@ -1,24 +1,5 @@
-*{
-	margin: 0;padding: 0;
-}
-ul,li{
-	list-style: none;
-}
-/*头部*/
-.header {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 48px;
-  line-height: 48px;
-  left: 0;
-  z-index: 100;
-  background-color: #8E488E;
-  color: #fff;
- 
-}
 .goods{
-  display:block;
+  margin: 48px 0 54px;
 }
 
 .comment-list{
@@ -38,10 +19,10 @@ ul,li{
   color: #000;
 }
 .title1{
- left: 33%;
+ left: 32%;
 }
 .title2{
- left: 50%;
+ left: 52%;
 }
 .header #memu-list, .header #memu-left {
   font-size: 20px;
@@ -88,27 +69,32 @@ ul,li{
 	height: 25px;line-height: 25px;font-weight: bold;color: #616b7f;
 }
 .xinxi .price{color: #e80080;}
+.xinxi .price i{font-style: normal;}
 .space{
 	height: 10px;
 	background: #f1f5f6;
 }
 .wenzi p{color:#999;}
 .wenzi p span{
-	font-size: 18px;
+	font-size: 14px;
 	font-weight: bold;
 	color: #000;
 }
 .goods-img li img{width: 100%;height:100%}
 /*评论*/
 .comment-list{
-  font-size: 20px;
+	display: none;
+  font-size: 14px;
   position: absolute;
-  top:50px;
+  top:48px;
+  bottom: 54px;
+  overflow-y: auto;
+  background: #f1f5f6;
 }
 .comment-list .comment-content{
   background: #fff;
-  overflow: hidden;
   margin-top: 10px;
+  overflow: hidden;
 }
 .comment-list .comment-content .user{
   border-bottom: solid 1px #ccc;
@@ -152,6 +138,7 @@ ul,li{
   width: 100%;
   position: fixed;
   bottom: 0;
+  padding: 0;
 }
 
 .footer div:nth-child(n) {

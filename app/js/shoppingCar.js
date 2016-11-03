@@ -22,14 +22,14 @@
 		var info = $('<div/>').addClass('info col-xs-5');
 		var title = $('<div/>').addClass('title');
 		$('<p/>').html(arr[i].title).appendTo(title);
-		$('<span/>').addClass('price').html('&yen;'+arr[i].price).appendTo(title);
+		$('<span/>').addClass('price').html('&yen;<i>'+arr[i].price+'</i>').appendTo(title);
 		title.appendTo(info);
 		info.appendTo(li);
 		
 		//数量
 		var num = $('<div/>').addClass('num col-xs-3');
 		$('<input type="button" value="-" class="cut" />').appendTo(num);
-		$('<input type="text" value="1" class="count" />').appendTo(num);
+		$('<input type="text" value='+arr[i].count+' />').addClass('count').appendTo(num);
 		$('<input type="button" value="+" class="add" />').appendTo(num);
 		num.appendTo(li);
 		
@@ -72,7 +72,8 @@
 		if($che.prop('checked')){
 			total();
 		}
-		local();
+		var $title = $(this).closest('li').find('.title p').html();
+		local($title,$count);
 	});
 	//数量增加
 	$datalist.on('singleTap','.add',function(){
@@ -82,15 +83,18 @@
 		if($che.prop('checked')){
 			total();
 		}
-		local();
+		var $title = $(this).closest('li').find('.title p').html();
+		local($title,$count);
 	});
 	//更改本地存储
-	function local(){
+	function local($title,$count){
 		arr = JSON.parse(localStorage.getItem('shoppingCar'));
-		for(var i in arr){  //遍历localStorage数组更改商品数量
-			if(arr[i].title == $(this).closest('li').find('.title').html()){
+		console.log($title);
+		for(var i=0;i<arr.length;i++){  //遍历localStorage数组更改商品数量
+			if(arr[i].title == $title){
 				arr[i].count = $count;
 				localStorage.setItem('shoppingCar',JSON.stringify(arr));
+				console.log($count);
 			}
 		}
 	}
@@ -103,7 +107,7 @@
 		//更改本地存储
 		arr = JSON.parse(localStorage.getItem('shoppingCar'));
 		for(var i in arr){  //遍历localStorage数组更改商品数量
-			if(arr[i].title == $(this).closest('li').find('.title').html()){
+			if(arr[i].title == $(this).closest('li').find('.title p').html()){
 				arr.splice(i,1);
 				localStorage.setItem('shoppingCar',JSON.stringify(arr));
 			}
