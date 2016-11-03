@@ -1,7 +1,27 @@
 $one:#387ef5;
 $tow:lighten($one,10%);
 
+<<<<<<< HEAD
 .section{margin: 48px 0 54px;}
+=======
+/*哈哈哈，小豆比*/
+body{font-family: "微软雅黑";font-size: 13px;margin: 0;padding: 0;background: #f1f5f6;color: #000;}
+ a{text-decoration: none;color: #555555;}
+//会员中心
+.header{
+    height: 48px;
+    display: flex;
+    background-color: #8E488E;
+    line-height: 48px;
+    text-align: center;
+}
+.header span{color: white;}
+.header span:first-child{flex:1 ;}
+.header span:nth-child(2){flex: 9;}
+.header span:last-child{flex:1 ;}
+
+
+>>>>>>> 82bb620f49f154729c17a5bc148d37701c85f89f
 .box1{display: flex;height: 85px;overflow: hidden;
     background: linear-gradient(to left,#5b2a1b,#1b0512);color:white;
 }
