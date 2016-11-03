@@ -53,6 +53,10 @@ body{font-family: "微软雅黑";font-size: 13px;margin: 0;padding: 0;background
      border-radius: 50%;
      text-align: center;
      }
+.box3 .icon-icon01,.icon-huiyuan,.icon-huiyuan1{
+    color: white;
+}   
+
 .box3 div:nth-child(2) li:first-child span:first-child{
     background: #4fc6ee;
 } 
@@ -62,6 +66,7 @@ body{font-family: "微软雅黑";font-size: 13px;margin: 0;padding: 0;background
 .box3 div li:nth-child(2){flex: 5.3;}   
 .box3 div li:nth-child(3){flex: 1;justify-content: flex-end;position: relative;} 
 .box3 div li:nth-child(3) span{
+    color: white;
     display: block;
     width: 20px;height: 20px;
     text-align: center;
@@ -74,6 +79,9 @@ body{font-family: "微软雅黑";font-size: 13px;margin: 0;padding: 0;background
 .box3 div li:nth-child(4){flex: 0.7;text-align: center;}  
 .box3 div:nth-child(3){border-bottom: solid 1px #e7eaec;}
 
+.box4 .icon-dingdan,.icon-trophyfill,.icon-ziliaotianxie{
+    color: white;
+}  
 .box4{display: flex;flex-direction: column;margin-top: 22px;background: white;}
 .box4 div{ height: 50px;border-top: solid 1px #e7eaec;}
 .box4 div ul{display: flex;flex-direction: row;flex: 1;margin-left: -20px;}
@@ -107,7 +115,7 @@ body{font-family: "微软雅黑";font-size: 13px;margin: 0;padding: 0;background
     border-top: solid 1px #cccccc;
     border-bottom: solid 1px #cccccc;
     background:white ;
-  }
+}
 .footer ul{
     flex: 1;
     display: flex;
@@ -148,5 +156,5 @@ body{font-family: "微软雅黑";font-size: 13px;margin: 0;padding: 0;background
 .dingdan1_4{display: flex;height: 48px;line-height: 48px;text-align: right;border-top: solid 1px #cccccc;}
 .span5{flex: 1;margin-right: 20px;}
 .button1{margin-left: 10px;}
-
+.button2{margin-left: 10px;}
 

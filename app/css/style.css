@@ -147,6 +147,10 @@ a {
   text-align: center;
 }
 
+.box3 .icon-icon01, .icon-huiyuan, .icon-huiyuan1 {
+  color: white;
+}
+
 .box3 div:nth-child(2) li:first-child span:first-child {
   background: #4fc6ee;
 }
@@ -166,6 +170,7 @@ a {
 }
 
 .box3 div li:nth-child(3) span {
+  color: white;
   display: block;
   width: 20px;
   height: 20px;
@@ -185,6 +190,10 @@ a {
 
 .box3 div:nth-child(3) {
   border-bottom: solid 1px #e7eaec;
+}
+
+.box4 .icon-dingdan, .icon-trophyfill, .icon-ziliaotianxie {
+  color: white;
 }
 
 .box4 {
@@ -376,5 +385,9 @@ a {
 }
 
 .button1 {
+  margin-left: 10px;
+}
+
+.button2 {
   margin-left: 10px;
 }
