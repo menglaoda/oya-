@@ -6,6 +6,7 @@ body {
   margin: 0;
   padding: 0;
   background: #f1f5f6;
+  color: #000;
 }
 
 a {
@@ -16,7 +17,7 @@ a {
 .header {
   height: 48px;
   display: flex;
-  background: blueviolet;
+  background-color: #8E488E;
   line-height: 48px;
   text-align: center;
 }
