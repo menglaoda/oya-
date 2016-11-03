@@ -1,6 +1,5 @@
 ;$(function($){
 	var $datalist = $('.dataList');
-	var index = 0;
 	//读取本地存储
 	var arr = localStorage.getItem('shoppingCar');
 	arr = arr ? JSON.parse(arr) : [];
@@ -23,7 +22,7 @@
 		var info = $('<div/>').addClass('info col-xs-5');
 		var title = $('<div/>').addClass('title');
 		$('<p/>').html(arr[i].title).appendTo(title);
-		$('<span/>').html(arr[i].price).appendTo(title);
+		$('<span/>').addClass('price').html('&yen;'+arr[i].price).appendTo(title);
 		title.appendTo(info);
 		info.appendTo(li);
 		
@@ -122,8 +121,40 @@
 		$('span','.pay').html($total);
 	}
 	//确认支付
-	$('.pay').singleTap(function(){
-		alert('对不起，系统正在维护！');
+	var str,obj={},goods=[],goodsObj={};
+	var $che = $('.dataList .che');
+	$('.pay').on('touchend',function(){
+		var index = 0;
+		alert('正在跳转!');
+		$che.each(function(idx,item){
+			if(item.checked){
+				goodsObj.title = $(this).closest('li').find('.title p').html();
+				goodsObj.price = $(this).closest('li').find('.title i').html();
+				goodsObj.img = $(this).closest('li').find('.goods img').attr('src');
+				goodsObj.count = $(this).closest('li').find('.count').val();
+				goods.push(goodsObj);
+				index++;
+			}
+		});
+		if(localStorage.getItem('order')) { //判断localStorage是否存在
+			str = JSON.parse(localStorage.getItem('order')); //将localStorage字符串转换成数组
+				obj = {
+					'id':parseInt(Math.random()*1000),
+					'sum': index,
+					'goods':goods
+				};
+				str.push(obj);
+		} else { //如果localStorage不存在则设置一个空数组追加对象
+			str = [];
+			obj = {
+				'id':parseInt(Math.random()*1000),
+				'sum': index,
+				'goods':goods
+			}
+			str.push(obj);
+		}
+		str = JSON.stringify(str); //将数组转换为字符串
+		var order = localStorage.setItem('order',str); //设置本地存储
 	});
 	//支付方式
 	$('.payMethod').singleTap(function(){
