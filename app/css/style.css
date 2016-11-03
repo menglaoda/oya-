@@ -1,40 +1,5 @@
-@charset "UTF-8";
-/*哈哈哈，小豆比*/
-body {
-  font-family: "微软雅黑";
-  font-size: 13px;
-  margin: 0;
-  padding: 0;
-  background: #f1f5f6;
-}
-
-a {
-  text-decoration: none;
-  color: #555555;
-}
-
-.header {
-  height: 48px;
-  display: flex;
-  background: blueviolet;
-  line-height: 48px;
-  text-align: center;
-}
-
-.header span {
-  color: white;
-}
-
-.header span:first-child {
-  flex: 1;
-}
-
-.header span:nth-child(2) {
-  flex: 9;
-}
-
-.header span:last-child {
-  flex: 1;
+.section {
+  margin: 48px 0 54px;
 }
 
 .box1 {
@@ -47,8 +12,8 @@ a {
 
 .box1 div:first-child {
   flex: 2;
-  margin-left: 20px;
   margin-top: 20px;
+  margin-left: 10px;
 }
 
 .box1 div:first-child img {
@@ -88,7 +53,6 @@ a {
   display: flex;
   list-style: none;
   margin-top: 0px;
-  margin-left: -30px;
 }
 
 .box2 li {
@@ -126,16 +90,21 @@ a {
   display: flex;
   flex-direction: row;
   flex: 1;
-  margin-left: -20px;
+  margin: 0;
+  padding: 10px 0;
 }
 
 .box3 div li {
   list-style: none;
   line-height: 36px;
+  height: 36px;
+  color: #999;
 }
 
 .box3 div li:first-child {
   flex: 0.8;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .box3 div li:first-child span:first-child {
@@ -180,7 +149,7 @@ a {
   position: absolute;
   right: 10px;
   top: 8px;
-  background: blueviolet;
+  background: #8E488E;
 }
 
 .box3 div li:nth-child(4) {
@@ -212,16 +181,20 @@ a {
   display: flex;
   flex-direction: row;
   flex: 1;
-  margin-left: -20px;
+  margin: 0;
+  padding: 10px 0;
 }
 
 .box4 div li {
   list-style: none;
   line-height: 36px;
+  color: #999;
 }
 
 .box4 div li:first-child {
   flex: 0.8;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .box4 div li:first-child span:first-child {
@@ -231,6 +204,10 @@ a {
   background: #fc215e;
   border-radius: 50%;
   text-align: center;
+}
+
+.box4 div li a {
+  color: #999;
 }
 
 .box4 div:nth-child(2) li:first-child span:first-child {
@@ -254,46 +231,17 @@ a {
   border-bottom: solid 1px #e7eaec;
 }
 
-/*尾部*/
-.footer {
-  height: 54px;
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
-  display: flex;
-  border-top: solid 1px #cccccc;
-  border-bottom: solid 1px #cccccc;
-  background: white;
-}
-
-.footer ul {
-  flex: 1;
-  display: flex;
-  list-style: none;
-  margin-left: -40px;
-}
-
-.footer li {
-  text-align: center;
-  flex: 1;
-}
-
-.footer li p {
-  margin-top: 3px;
-  flex: 1;
-}
-
 .nav {
   display: flex;
   border-bottom: solid 1px #cccccc;
-  height: 48px;
+  margin-top: 48px;
+  padding: 10px 0;
 }
 
 .nav ul {
   display: flex;
   flex: 1;
   list-style: none;
-  margin-left: -50px;
 }
 
 .nav li {
@@ -302,6 +250,10 @@ a {
   text-align: center;
   border-left: solid 1px #cccccc;
   line-height: 30px;
+}
+
+.nav li:first-child {
+  border: 0;
 }
 
 .dingdan1 {
@@ -390,4 +342,8 @@ a {
 
 .button2 {
   margin-left: 10px;
+}
+
+.footer ul li:last-child a {
+  color: #8E488E;
 }
