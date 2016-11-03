@@ -90,7 +90,7 @@
                 $buttom3.html("查看物流");
                 $span5.addClass("span5");
                 $buttom1.addClass("button1"); 
-                $buttom2.addClass("button1");
+                $buttom2.addClass("button2");
                 $buttom3.addClass("button1");
                 $buttom1.appendTo($span5);
                 $buttom2.appendTo($span5);
@@ -112,10 +112,15 @@
                 $dingdan1.appendTo($DDsection);
                 
                 //点击取消订单
+//              var btn2 = $(".button2");
+                
+                
+                
                 $buttom2.on("singleTap",function(){
                 	console.log("aa");
                 	$buttom2.closest($dingdan1).remove();
-                	localStorage.removeItem("order","goods");
+              	localStorage.removeItem("order");
+                 
                 })
                 
 			
