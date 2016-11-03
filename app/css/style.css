@@ -1,7 +1,12 @@
-<<<<<<< HEAD
+
+.DDsection {
+  font-size: 14px;
+}
+
+
 .section {
   margin: 48px 0 54px;
-=======
+}
 @charset "UTF-8";
 /*哈哈哈，小豆比*/
 body {
@@ -40,7 +45,7 @@ a {
 
 .header span:last-child {
   flex: 1;
->>>>>>> 82bb620f49f154729c17a5bc148d37701c85f89f
+
 }
 
 .box1 {
@@ -319,13 +324,13 @@ a {
   flex: 1;
   text-align: right;
   margin-right: 10px;
-  color: red;
+  color: #F1286A;
 }
 
 .dingdan1_2 {
-  height: 98px;
   display: flex;
   border-top: solid 1px #cccccc;
+  padding: 10px 0;
 }
 
 .oimg {
@@ -343,17 +348,21 @@ a {
 }
 
 .span3 {
-  color: red;
+  color: #F1286A;
+  margin-top: 30px;
+  display: inline-block;
 }
 
 .span4 {
   position: absolute;
   right: 20px;
+  margin-top: 40px;
 }
 
 .dingdan1_3 {
   display: flex;
   height: 38px;
+  line-height: 38px;
   border-top: solid 1px #cccccc;
   position: relative;
 }
@@ -362,6 +371,10 @@ a {
   flex: 1;
   position: absolute;
   right: 20px;
+}
+
+.hh3 b {
+  font-weight: normal;
 }
 
 .dingdan1_4 {
@@ -379,10 +392,18 @@ a {
 
 .button1 {
   margin-left: 10px;
+  padding: 5px;
+  background: #fff;
+  border: solid 1px #ccc;
+  border-radius: 5px;
 }
 
 .button2 {
   margin-left: 10px;
+  padding: 5px;
+  background: #fff;
+  border: solid 1px #ccc;
+  border-radius: 5px;
 }
 
 .footer ul li:last-child a {
