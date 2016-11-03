@@ -131,6 +131,7 @@ $(function($) {
 			//保存到本地存储
 			localStorage.setItem('data', data);
 			//		console.log(JSON.parse(data))
+			location.assign('zhongxin.html');
 		}
 	})
 });
