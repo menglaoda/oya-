@@ -43,7 +43,6 @@ $(function($) {
 				otext.html('错了错了，没有你这手机号');
 				$input.eq(1).val('');
 			}
-
 		}
 	})
 
@@ -75,7 +74,7 @@ $(function($) {
 								$shi_name.attr({
 									value: shi.name
 								}).html(shi.name).appendTo($shilist);
-								//								console.log(shi);
+								//console.log(shi);
 
 								$xian.on('focus', function() {
 									var $shi_txt = $shi.val();
@@ -131,6 +130,7 @@ $(function($) {
 			//保存到本地存储
 			localStorage.setItem('data', data);
 			//		console.log(JSON.parse(data))
+			location.assign('zhongxin.html');
 		}
 	})
 });
