@@ -5,12 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 	<title>商品详情页</title>
 	<link rel="stylesheet" href="../css/swiper.min.css">
-	<link rel="stylesheet" type="text/css" href="../tools/font-awesome-4.6.3/css/font-awesome.min.css" />
-	<link rel="stylesheet" href="../tools/font/iconfont.css">
-	<link rel="stylesheet" href="../css/common.css">
-	<link rel="stylesheet" href="../css/goods.css">
 	
+	<link rel="stylesheet" href="../css/goods.css">
+	<!-- 评论 -->
+	<link rel="stylesheet" href="../assets/bootstrap/dist/css/bootstrap.min.css" />
 	<script src="../js/jquery-1.12.0.js"></script>
+	<script src="../assets/zepto/dist/zepto.min.js""></script>
+	<script src="../assets/zepto/src/touch.js""></script>
 	<script src="../js/swiper.min.js"></script>
 	<script src="../js/goods.js"></script>
 
@@ -18,12 +19,15 @@
 <body>
 <header class="header">
 	<i class="fa fa-angle-left" id="memu-left"></i>
-	<div class="title">商品详情</div>
+	<ul class="ul-li">
+		<li class="title1 active">商品详情</li>
+		<li class="title2">评论</li>
+	</ul>
 	<i class="fa fa-list-ul" id="memu-list"></i>
 </header>
 
 
-<div>
+<div class="goods">
 	<div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="../img/56.jpg" alt=""></div>
@@ -59,52 +63,70 @@
 		<li><img src="../img/9.png" alt=""></li>
 	</ul>
 </div>
-	
-
-<!-- <div class="pinglun">
-	<div class="comment">
-		<ul>
-			<li class="col-xs-6">
-				<div class="de_img"><img src="../img/1.png"/>&nbsp;匿名</div></li>
-			<li class="col-xs-6 line_right">2016-05-16 12：00</li>
-		</ul>
-		<ul class="ul2">
-			<li class="reds">
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-			</li>
-			<li class="fonts">真心好，下次还会来再买</li>
-			<li class="colcor">购物日期：2016-5-10 14:00</li>
-		</ul>
+<!--评论列表-->
+<section class="comment-list" >
+	<!--用户评论内容-->
+	<div class="comment-content">
+		<div class="user">
+			<div class="col-xs-6">
+				<img src="../img/2.jpg" />
+				<span>匿名</span>
+			</div>
+			<time class="col-xs-6">2016-11-1&nbsp;12:00</time>
+		</div>
+		<div class="content-txt">
+			<div class="col-xs-12">
+				<span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>
+			</div>
+			<p class="col-xs-12">真心好，下次还会再买</p>
+			<i class="col-xs-12 buyTime">购买日期：2016-10-25&nbsp;14:00</i>
+		</div>
 	</div>
-</div> -->
+	
+	<div class="comment-content">
+		<div class="user">
+			<div class="col-xs-6">
+				
+				<img src="../img/3.jpg" />
+				<span>匿名</span>
+			</div>
+			<time class="col-xs-6">2016-11-1&nbsp;12:00</time>
+		</div>
+		<div class="content-txt">
+			<div class="col-xs-12">
+				<span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>
+			</div>
+			<p class="col-xs-12">真心好，下次还会再买</p>
+			<i class="col-xs-12 buyTime">购买日期：2016-10-25&nbsp;14:00</i>
+		</div>
+	</div>
+	
+	<div class="comment-content">
+		<div class="user">
+			<div class="col-xs-6">
+				<img src="../img/4.jpg" />
+				<span>匿名</span>
+			</div>
+			<time class="col-xs-6">2016-11-1&nbsp;12:00</time>
+		</div>
+		<div class="content-txt">
+			<div class="col-xs-12">
+				<span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>
+			</div>
+			<p class="col-xs-12">真心好，下次还会再买</p>
+			<i class="col-xs-12 buyTime">购买日期：2016-10-25&nbsp;14:00</i>
+		</div>
+	</div>
+</section>
 <footer class="footer">
 	<div class="col-xs-3 allPick">
-		<div class="col-xs-6 choice">
-		<div class=" iconfont icon-gouwuche"></div>
-			<input type="checkbox" class="che" />
-			<span></span>
+		<div class="glyphicon glyphicon-shopping-cart" style=""><span class="num">0</span>
 		</div>
-		
 	</div>
 	<div class="col-xs-4 payMethod">加入购物车</div>
-	<div class="col-xs-5 pay">立即购买(<span>0</span>)</div>
+	<div class="col-xs-5 pay"><a href="shoppingCar.html">立即购买</a></div>
 </footer>
-<!-- <footer class="footer">
-	<div class="col-xs-3 allPick">
-		<div class="col-xs-6 choice">
-		<div class=" iconfont icon-gouwuche"></div>
-			<input type="checkbox" class="che" />
-			<span></span>
-		</div>
-		
-	</div>
-	<div class="col-xs-4 payMethod">加入购物车</div>
-	<div class="col-xs-5 pay">立即购买(<span>0</span>)</div>
-</footer> -->
+
 
 	
 </body>
