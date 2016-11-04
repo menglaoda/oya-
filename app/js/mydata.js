@@ -13,7 +13,6 @@ $(function($) {
     //读取我的资料
         
     var mydata =JSON.parse(localStorage.getItem('data')) ;
-    console.log(mydata.name);
     if(mydata){
     	$title.html('我的资料');
     	
