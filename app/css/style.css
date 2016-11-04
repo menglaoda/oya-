@@ -1,51 +1,14 @@
+body {
+  background: #f1f5f6;
+}
 
 .DDsection {
   font-size: 14px;
+  margin-bottom: 54px;
 }
-
 
 .section {
   margin: 48px 0 54px;
-}
-@charset "UTF-8";
-/*哈哈哈，小豆比*/
-body {
-  font-family: "微软雅黑";
-  font-size: 13px;
-  margin: 0;
-  padding: 0;
-  background: #f1f5f6;
-  color: #000;
-}
-
-a {
-  text-decoration: none;
-  color: #555555;
-}
-
-.header {
-  height: 48px;
-  display: flex;
-  background-color: #8E488E;
-  line-height: 48px;
-  text-align: center;
-}
-
-.header span {
-  color: white;
-}
-
-.header span:first-child {
-  flex: 1;
-}
-
-.header span:nth-child(2) {
-  flex: 9;
-}
-
-.header span:last-child {
-  flex: 1;
-
 }
 
 .box1 {
@@ -282,6 +245,8 @@ a {
   border-bottom: solid 1px #cccccc;
   margin-top: 48px;
   padding: 10px 0;
+  background: #fff;
+  margin-bottom: 12px;
 }
 
 .nav ul {
@@ -312,6 +277,10 @@ a {
   display: flex;
   line-height: 40px;
   border-top: solid 1px #cccccc;
+}
+
+.dingdan1 i {
+  font-style: normal;
 }
 
 .dingdan1_1 .span1 {

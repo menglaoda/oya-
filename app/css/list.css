@@ -79,7 +79,9 @@
 	font-size: 14px;
 	
 }
-
+.footer{
+	font-size: 14px;
+}
 
 .footer ul li:nth-child(3) a {
   color: #8E488E;

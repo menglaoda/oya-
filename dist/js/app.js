@@ -209,17 +209,52 @@ function getClientIp(req) {
 $(function(){
 	
 	var allList = $('.list-brand li');
-	var listRight = $('.rightt');
-	console.log(listRight)
-	
+	var $allUl = $('ul.allUl');
+	var $ediv =$('.list-Img');
+
 	// 点击显示对应的rightt
-	allList.click(function(){
+	allList.on('singleTap',function(){
 		var index=$(this).index();
-		console.log(index)
+
 		$(this).addClass('active').siblings().removeClass('active');
-		listRight.eq(index).css('zIndex','100').siblings().css('zIndex','1');
+		// listRight.eq(index).css('zIndex','100').siblings().css('zIndex','1');
+		
 	})
+
+	var dex = 0;
+	allList.on('singleTap',function(){
+		// 初始化
+		
+		$.ajaxSetup({
+			url:'../data/liebiao1.json',
+			type:'get',
+			dataType:'json',
+			async:true,
+			success:function(res){
+				console.log(res);
+
+				console.log($allUl);
+				$allUl.eq(0).find('img').attr({src:res[dex].imgurl});
+				$allUl.eq(0).find('p').text(res[dex].name);
+				
+				$allUl.eq(1).find('img').attr({src:res[dex+1].imgurl});
+				$allUl.eq(1).find('p').text(res[dex+1].name);
 	
+				// $.each(res,function(idx,item){
+				// 	console.log(this);
+				// 	$allUl[0].find('img').attr({src:htis})
+			
+				// });
+				dex++;
+				if(dex>=res.length-1){
+					dex=0;
+				}
+			}
+		})
+		// 请求
+		$.ajax();
+		
+	})
 
 })
 exports.types = {
@@ -259,15 +294,14 @@ $(function($) {
 			var txt = $input.eq(0).val();
 
 			if(txt == '') {
-				otext.html('你的小昵称呢？');
+				otext.html('昵称不能为空！');
 			} else {
 				var pattern = /^.{2,10}/;
 				var otxt = pattern.test(txt);
 
 				if(otxt) {
-					otext.html('帅气的小名');
+                    otext.html('');
 				} else {
-					otext.html('什么玩意！');
 					$input.eq(1).val('');
 				}
 			}
@@ -277,14 +311,13 @@ $(function($) {
 		var num = $input.eq(1).val();
 
 		if(num == '') {
-			otext.html('你的telephone number 呢？');
+			otext.html('填写手机号。');
 		} else {
 			var pattern = /^(134|155|180|150|138|156)\d{8}$/;
 			var oname = pattern.test(num);
 			if(oname) {
-				otext.html('可以可以！');
+				 otext.html('');
 			} else {
-				otext.html('错了错了，没有你这手机号');
 				$input.eq(1).val('');
 			}
 		}
@@ -297,43 +330,31 @@ $(function($) {
 			//			console.log(res);
 			//遍历第一遍
 			$.each(res, function(idx, item) {
-				//<option value="广东" label="大陆">广东</option>
 				//遍历第二遍，得出省份并创建
 				$.each(item, function(idx, name) {
-					//					console.log(name);
 					var $sheng_name = $('<option/>');
-					$sheng_name.attr({
-						value: name.name
-					}).html(name.name).appendTo($shenglist);
+					$sheng_name.attr({value: name.name}).html(name.name).appendTo($shenglist);
 
 					$shi.on('focus', function() {
 						var $sheng_txt = $sheng.val();
 						//获取选择的省份匹配相等得出idx
 						if(name.name == $sheng_txt) {
-							console.log(item[idx]);
 							$shilist.empty();
 							//遍历第三遍取到的下标idx，遍历regions得出其全部的市
 							$.each(item[idx].regions, function(idx, shi) {
 								var $shi_name = $('<option/>');
-								$shi_name.attr({
-									value: shi.name
-								}).html(shi.name).appendTo($shilist);
-								//console.log(shi);
+								$shi_name.attr({value: shi.name}).html(shi.name).appendTo($shilist);
 
 								$xian.on('focus', function() {
 									var $shi_txt = $shi.val();
 									//获取选择的市匹配相等得出idx
 									if(shi.name == $shi_txt) {
 										$xianlist.empty();
-							    	    //console.log(item[idx].regions[idx]);
-										//console.log(shi.name);
 										//遍历第四遍，得出所包含的县并创建
 										$.each(shi.regions, function(idx, xian) {
 											var $xian_name = $('<option/>');
 
-											$xian_name.attr({
-												value: xian.name
-											}).html(xian.name).appendTo($xianlist);
+											$xian_name.attr({value: xian.name}).html(xian.name).appendTo($xianlist);
 										})
 									}
 
@@ -418,6 +439,16 @@ $(function($) {
 		}
 	});
 });
+;$(function($){
+	var $menu = $('.side-list');
+	var $btn = $('#memu-list');
+	
+	$btn.on('singleTap',function(){
+		$menu.fadeToggle();
+	})
+	
+});
+
 ;$(function($){
 	var $datalist = $('.dataList');
 	//读取本地存储
@@ -602,7 +633,9 @@ $(function($) {
 	var shuju = JSON.parse(localStorage.getItem("order"));
 //	    console.log(shuju);
 	$.each(shuju,function(idx,item) {
+		
 		$.each(item.goods, function(idx,item) {
+			console.log(idx);
 			console.log(item.price);
 			
 				var $dingdan1 = $("<div></div>");
@@ -639,12 +672,12 @@ $(function($) {
                 $oimg.appendTo($dingdan1_2_1);
                 $dingdan1_2_1.appendTo($dingdan1_2);
                 
-                var $h22 = $("<h2></h2>");
+                var $h22 = $("<p></p>");
                 var $span3 = $("<span></span>");
 				var $span4 = $("<span></span>");
 				$h22.html(item.title);
-				$span3.html(item.price);
-				$span4.html(item.count);
+				$span3.html('&yen;'+item.price);
+				$span4.html('&times;'+item.count);
 				$span3.addClass("span3");
 				$span4.addClass("span4");
 				$dingdan1_2_2.addClass("dingdan1_2_2");
@@ -658,7 +691,7 @@ $(function($) {
 //				  <div class="dingdan1_3">
 //              	<h3 class="hh3">共<b>2</b>件商品：合计 ￥<span>240</span></h3>
 //              </div>	
-                var $hh3 = $("<h3></h3>");
+                var $hh3 = $("<p></p>");
                 var $b = $("<b></b>");
                  var $b1 = $("<b></b>");
                 var $span5 = $("<span></span>");
