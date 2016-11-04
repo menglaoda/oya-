@@ -1,10 +1,13 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
+.DDsection {
+  font-size: 14px;
+}
+
+
 .section {
   margin: 48px 0 54px;
-=======
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+}
+
 @charset "UTF-8";
 /*哈哈哈，小豆比*/
 body {
@@ -13,25 +16,21 @@ body {
   margin: 0;
   padding: 0;
   background: #f1f5f6;
-<<<<<<< HEAD
-=======
   color: #000;
 }
 
 a {
   text-decoration: none;
   color: #555555;
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+
 }
 
 .header {
   height: 48px;
   display: flex;
-<<<<<<< HEAD
-  background: blueviolet;
-=======
+
   background-color: #8E488E;
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+
   line-height: 48px;
   text-align: center;
 }
@@ -50,10 +49,6 @@ a {
 
 .header span:last-child {
   flex: 1;
-<<<<<<< HEAD
-=======
->>>>>>> 82bb620f49f154729c17a5bc148d37701c85f89f
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
 }
 
 .box1 {
@@ -66,13 +61,10 @@ a {
 
 .box1 div:first-child {
   flex: 2;
-<<<<<<< HEAD
-  margin-left: 20px;
-  margin-top: 20px;
-=======
+
   margin-top: 20px;
   margin-left: 10px;
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+
 }
 
 .box1 div:first-child img {
@@ -112,10 +104,7 @@ a {
   display: flex;
   list-style: none;
   margin-top: 0px;
-<<<<<<< HEAD
-  margin-left: -30px;
-=======
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+
 }
 
 .box2 li {
@@ -153,31 +142,27 @@ a {
   display: flex;
   flex-direction: row;
   flex: 1;
-<<<<<<< HEAD
-  margin-left: -20px;
-=======
+
   margin: 0;
   padding: 10px 0;
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+
 }
 
 .box3 div li {
   list-style: none;
   line-height: 36px;
-<<<<<<< HEAD
-=======
+
   height: 36px;
   color: #999;
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+
 }
 
 .box3 div li:first-child {
   flex: 0.8;
-<<<<<<< HEAD
-=======
+
   margin-left: 10px;
   margin-right: 10px;
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+
 }
 
 .box3 div li:first-child span:first-child {
@@ -189,13 +174,11 @@ a {
   text-align: center;
 }
 
-<<<<<<< HEAD
-=======
 .box3 .icon-icon01, .icon-huiyuan, .icon-huiyuan1 {
   color: white;
 }
 
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+
 .box3 div:nth-child(2) li:first-child span:first-child {
   background: #4fc6ee;
 }
@@ -215,10 +198,9 @@ a {
 }
 
 .box3 div li:nth-child(3) span {
-<<<<<<< HEAD
-=======
+
   color: white;
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+
   display: block;
   width: 20px;
   height: 20px;
@@ -228,11 +210,9 @@ a {
   position: absolute;
   right: 10px;
   top: 8px;
-<<<<<<< HEAD
-  background: blueviolet;
-=======
+
   background: #8E488E;
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+
 }
 
 .box3 div li:nth-child(4) {
@@ -244,13 +224,12 @@ a {
   border-bottom: solid 1px #e7eaec;
 }
 
-<<<<<<< HEAD
-=======
+
 .box4 .icon-dingdan, .icon-trophyfill, .icon-ziliaotianxie {
   color: white;
 }
 
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+
 .box4 {
   display: flex;
   flex-direction: column;
@@ -267,30 +246,26 @@ a {
   display: flex;
   flex-direction: row;
   flex: 1;
-<<<<<<< HEAD
-  margin-left: -20px;
-=======
+
   margin: 0;
   padding: 10px 0;
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+
 }
 
 .box4 div li {
   list-style: none;
   line-height: 36px;
-<<<<<<< HEAD
-=======
+
   color: #999;
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+
 }
 
 .box4 div li:first-child {
   flex: 0.8;
-<<<<<<< HEAD
-=======
+
   margin-left: 10px;
   margin-right: 10px;
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+
 }
 
 .box4 div li:first-child span:first-child {
@@ -302,13 +277,12 @@ a {
   text-align: center;
 }
 
-<<<<<<< HEAD
-=======
+
 .box4 div li a {
   color: #999;
 }
 
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+
 .box4 div:nth-child(2) li:first-child span:first-child {
   background: #4fc6ee;
 }
@@ -330,55 +304,21 @@ a {
   border-bottom: solid 1px #e7eaec;
 }
 
-<<<<<<< HEAD
-.footer {
-  height: 50px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-  border-top: solid 1px #cccccc;
-  border-bottom: solid 1px #cccccc;
-}
 
-.footer ul {
-  flex: 1;
-  display: flex;
-  list-style: none;
-  margin-left: -40px;
-}
 
-.footer li {
-  text-align: center;
-  flex: 1;
-}
-
-.footer li p {
-  margin-top: 3px;
-  flex: 1;
-}
-
-.nav {
-  display: flex;
-  border-bottom: solid 1px #cccccc;
-  height: 48px;
-=======
 .nav {
   display: flex;
   border-bottom: solid 1px #cccccc;
   margin-top: 48px;
   padding: 10px 0;
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+
 }
 
 .nav ul {
   display: flex;
   flex: 1;
   list-style: none;
-<<<<<<< HEAD
-  margin-left: -50px;
-=======
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+
 }
 
 .nav li {
@@ -389,13 +329,12 @@ a {
   line-height: 30px;
 }
 
-<<<<<<< HEAD
-=======
+
 .nav li:first-child {
   border: 0;
 }
 
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+
 .dingdan1 {
   background: white;
   margin-bottom: 12px;
@@ -408,38 +347,32 @@ a {
   border-top: solid 1px #cccccc;
 }
 
-<<<<<<< HEAD
-.dingdan1_1 span:nth-child(1) {
-=======
+
 .dingdan1_1 .span1 {
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+
   flex: 1;
   text-align: left;
   margin-left: 10px;
 }
 
-<<<<<<< HEAD
-.dingdan1_1 span:nth-child(2) {
-=======
+
 .dingdan1_1 .span2 {
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+
   flex: 1;
   text-align: right;
   margin-right: 10px;
-  color: red;
+  color: #F1286A;
 }
 
 .dingdan1_2 {
-  height: 98px;
   display: flex;
   border-top: solid 1px #cccccc;
+  padding: 10px 0;
 }
 
-<<<<<<< HEAD
-.dingdan1_2 img {
-=======
+
 .oimg {
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+
   width: 80px;
   height: 90px;
 }
@@ -453,38 +386,38 @@ a {
   position: relative;
 }
 
-<<<<<<< HEAD
-.dingdan1_2_2 span:nth-child(2) {
-  color: red;
-}
 
-.dingdan1_2_2 span:nth-child(3) {
-=======
 .span3 {
-  color: red;
+  color: #F1286A;
+  margin-top: 30px;
+  display: inline-block;
 }
 
 .span4 {
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+
   position: absolute;
   right: 20px;
+  margin-top: 40px;
 }
 
 .dingdan1_3 {
   display: flex;
   height: 38px;
+  line-height: 38px;
   border-top: solid 1px #cccccc;
   position: relative;
 }
 
-<<<<<<< HEAD
-.dingdan1_3 .hh3 {
-=======
+
 .hh3 {
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+
   flex: 1;
   position: absolute;
   right: 20px;
+}
+
+.hh3 b {
+  font-weight: normal;
 }
 
 .dingdan1_4 {
@@ -495,29 +428,31 @@ a {
   border-top: solid 1px #cccccc;
 }
 
-<<<<<<< HEAD
-.dingdan1_4 span {
-=======
+
 .span5 {
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+
   flex: 1;
   margin-right: 20px;
 }
 
-<<<<<<< HEAD
-.dingdan1_4 button {
-  margin-left: 10px;
-}
-=======
+
 .button1 {
   margin-left: 10px;
+  padding: 5px;
+  background: #fff;
+  border: solid 1px #ccc;
+  border-radius: 5px;
 }
 
 .button2 {
   margin-left: 10px;
+  padding: 5px;
+  background: #fff;
+  border: solid 1px #ccc;
+  border-radius: 5px;
 }
 
 .footer ul li:last-child a {
   color: #8E488E;
 }
->>>>>>> 3f66a0b9358d2dd59ef8ce0ff9dab77daf80a870
+

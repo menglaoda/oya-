@@ -12,6 +12,7 @@
 	width: 100%;
 	margin: 1px 0;
 	float: left;
+	font-size: 14px;
 }
 .list-brand .active{
 	color:#ff1626;
@@ -61,7 +62,7 @@
 	width: 30%;
 	height: 50%;
 	float: left;
-	margin: 5px;
+	margin:5px 5px 0 0;
 }
 .list-Img .allUl li a{display: block;}
 .list-Img .allUl li  img{
@@ -75,6 +76,11 @@
 	text-align: center;
 	height: 30px;
 	line-height: 30px;
-	font-size: 18px;
+	font-size: 14px;
 	
+}
+
+
+.footer ul li:nth-child(3) a {
+  color: #8E488E;
 }

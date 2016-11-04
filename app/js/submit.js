@@ -4,7 +4,9 @@
 	var shuju = JSON.parse(localStorage.getItem("order"));
 //	    console.log(shuju);
 	$.each(shuju,function(idx,item) {
+		
 		$.each(item.goods, function(idx,item) {
+			console.log(idx);
 			console.log(item.price);
 			
 				var $dingdan1 = $("<div></div>");
@@ -41,12 +43,12 @@
                 $oimg.appendTo($dingdan1_2_1);
                 $dingdan1_2_1.appendTo($dingdan1_2);
                 
-                var $h22 = $("<h2></h2>");
+                var $h22 = $("<p></p>");
                 var $span3 = $("<span></span>");
 				var $span4 = $("<span></span>");
 				$h22.html(item.title);
-				$span3.html(item.price);
-				$span4.html(item.count);
+				$span3.html('&yen;'+item.price);
+				$span4.html('&times;'+item.count);
 				$span3.addClass("span3");
 				$span4.addClass("span4");
 				$dingdan1_2_2.addClass("dingdan1_2_2");
@@ -60,7 +62,7 @@
 //				  <div class="dingdan1_3">
 //              	<h3 class="hh3">共<b>2</b>件商品：合计 ￥<span>240</span></h3>
 //              </div>	
-                var $hh3 = $("<h3></h3>");
+                var $hh3 = $("<p></p>");
                 var $b = $("<b></b>");
                  var $b1 = $("<b></b>");
                 var $span5 = $("<span></span>");
