@@ -181,6 +181,10 @@ body {
   background: white;
 }
 
+.box4 a {
+  text-decoration: none;
+}
+
 .box4 div {
   height: 50px;
   border-top: solid 1px #e7eaec;
