@@ -1,5 +1,7 @@
 ;$(function(){
 
+        
+
      	var swiper = new Swiper('.swiper-container', {
 	        pagination: '.swiper-pagination',
 	        // paginationClickable: true,
@@ -135,113 +137,57 @@
 	});
 });
 
-var os = require('os');
-exports.all = getAllIp;
-exports.client = getClientIp;
-
-function getAllIp(){
-	var map = [];
-    var ifaces = os.networkInterfaces();
-    for (var dev in ifaces) {
-        // if (dev.indexOf('eth0') != -1) {
-            var tokens = dev.split(':');
-            var dev2 = null;
-            if (tokens.length == 2) {
-                dev2 = 'eth1:' + tokens[1];
-            } else if (tokens.length == 1) {
-                dev2 = 'eth1';
-            }
-            if (null == ifaces[dev2]) {
-                continue;
-            }
-            // 找到eth0和eth1分别的ip
-            var ip = null, ip2 = null;
-            ifaces[dev].forEach(function(details) {
-                if (details.family == 'IPv4') {
-                    ip = details.address;
-                }
-            });
-            ifaces[dev2].forEach(function(details) {
-                if (details.family == 'IPv4') {
-                    ip2 = details.address;
-                }
-            });
-            if (null == ip || null == ip2) {
-                continue;
-            }
-            // 将记录添加到map中去
-            if (ip.indexOf('10.') == 0 ||
-                ip.indexOf('172.') == 0 ||
-                ip.indexOf('192.') == 0) {
-                map.push({"intranet_ip" : ip, "internet_ip" : ip2});
-            } else {
-                map.push({"intranet_ip" : ip2, "internet_ip" : ip});
-            }
-        // }
-    }
-    return map;
-}
-
-/*function getClientIp() {
-    var addresses = [];
-    for (var k in interfaces) {
-        for (var k2 in interfaces[k]) {
-            var address = interfaces[k][k2];
-            if (address.family === 'IPv4' && !address.internal) {
-                addresses.push(address.address);
-            }
-        }
-    }
-    
-    return addresses;
-}*/
-
-// 获取客户端IP
-function getClientIp(req) {
-    var ip = req.headers['x-forwarded-for'] ||
-    req.connection.remoteAddress ||
-    req.socket.remoteAddress ||
-    req.connection.socket.remoteAddress;
-
-    return ip.match(/(\d{1,3}\.){3}\d{1,3}/)[0];
-};
-
 $(function(){
 	
 	var allList = $('.list-brand li');
-	var listRight = $('.rightt');
-	console.log(listRight)
-	
+	var $allUl = $('ul.allUl');
+	var $ediv =$('.list-Img');
+
 	// 点击显示对应的rightt
-	allList.click(function(){
+	allList.on('singleTap',function(){
 		var index=$(this).index();
-		console.log(index)
+
 		$(this).addClass('active').siblings().removeClass('active');
-		listRight.eq(index).css('zIndex','100').siblings().css('zIndex','1');
+		// listRight.eq(index).css('zIndex','100').siblings().css('zIndex','1');
+		
 	})
+
+	var dex = 0;
+	allList.on('singleTap',function(){
+		// 初始化
+		
+		$.ajaxSetup({
+			url:'../data/liebiao1.json',
+			type:'get',
+			dataType:'json',
+			async:true,
+			success:function(res){
+				console.log(res);
+
+				console.log($allUl);
+				$allUl.eq(0).find('img').attr({src:res[dex].imgurl});
+				$allUl.eq(0).find('p').text(res[dex].name);
+				
+				$allUl.eq(1).find('img').attr({src:res[dex+1].imgurl});
+				$allUl.eq(1).find('p').text(res[dex+1].name);
 	
+				// $.each(res,function(idx,item){
+				// 	console.log(this);
+				// 	$allUl[0].find('img').attr({src:htis})
+			
+				// });
+				dex++;
+				if(dex>=res.length-1){
+					dex=0;
+				}
+			}
+		})
+		// 请求
+		$.ajax();
+		
+	})
 
 })
-exports.types = {
-  "css": "text/css",
-  "gif": "image/gif",
-  "html": "text/html",
-  "ico": "image/x-icon",
-  "jpeg": "image/jpeg",
-  "jpg": "image/jpeg",
-  "js": "text/javascript",
-  "json": "application/json",
-  "pdf": "application/pdf",
-  "png": "image/png",
-  "svg": "image/svg+xml",
-  "swf": "application/x-shockwave-flash",
-  "tiff": "image/tiff",
-  "txt": "text/plain",
-  "wav": "audio/x-wav",
-  "wma": "audio/x-ms-wma",
-  "wmv": "video/x-ms-wmv",
-  "xml": "text/xml"
-};
 ;
 $(function($) {
 
@@ -253,21 +199,35 @@ $(function($) {
 	var $shilist = $('#shilist');
 	var $xian = $('#xian');
 	var $xianlist = $('#xianlist');
-
+    var $title = $('#title');
+    //读取我的资料
+        
+    var mydata =JSON.parse(localStorage.getItem('data')) ;
+    if(mydata){
+    	$title.html('我的资料');
+    	
+    	$input.eq(0).val(mydata.name) ;
+		  $input.eq(1).val(mydata.phone);
+		  $input.eq(2).val(mydata.sheng);
+		 $input.eq(3).val(mydata.shi);
+		 $input.eq(4).val(mydata.xian) ;
+		  $input.eq(5).val(mydata.dress);
+		  
+		  
+    }
 	//昵称验证
 	$input.eq(0).on('blur', function() {
 			var txt = $input.eq(0).val();
 
 			if(txt == '') {
-				otext.html('你的小昵称呢？');
+				otext.html('昵称不能为空！');
 			} else {
 				var pattern = /^.{2,10}/;
 				var otxt = pattern.test(txt);
 
 				if(otxt) {
-					otext.html('帅气的小名');
+                    otext.html('');
 				} else {
-					otext.html('什么玩意！');
 					$input.eq(1).val('');
 				}
 			}
@@ -277,14 +237,13 @@ $(function($) {
 		var num = $input.eq(1).val();
 
 		if(num == '') {
-			otext.html('你的telephone number 呢？');
+			otext.html('填写手机号。');
 		} else {
 			var pattern = /^(134|155|180|150|138|156)\d{8}$/;
 			var oname = pattern.test(num);
 			if(oname) {
-				otext.html('可以可以！');
+				 otext.html('');
 			} else {
-				otext.html('错了错了，没有你这手机号');
 				$input.eq(1).val('');
 			}
 		}
@@ -297,43 +256,31 @@ $(function($) {
 			//			console.log(res);
 			//遍历第一遍
 			$.each(res, function(idx, item) {
-				//<option value="广东" label="大陆">广东</option>
 				//遍历第二遍，得出省份并创建
 				$.each(item, function(idx, name) {
-					//					console.log(name);
 					var $sheng_name = $('<option/>');
-					$sheng_name.attr({
-						value: name.name
-					}).html(name.name).appendTo($shenglist);
+					$sheng_name.attr({value: name.name}).html(name.name).appendTo($shenglist);
 
 					$shi.on('focus', function() {
 						var $sheng_txt = $sheng.val();
 						//获取选择的省份匹配相等得出idx
 						if(name.name == $sheng_txt) {
-							console.log(item[idx]);
 							$shilist.empty();
 							//遍历第三遍取到的下标idx，遍历regions得出其全部的市
 							$.each(item[idx].regions, function(idx, shi) {
 								var $shi_name = $('<option/>');
-								$shi_name.attr({
-									value: shi.name
-								}).html(shi.name).appendTo($shilist);
-								//console.log(shi);
+								$shi_name.attr({value: shi.name}).html(shi.name).appendTo($shilist);
 
 								$xian.on('focus', function() {
 									var $shi_txt = $shi.val();
 									//获取选择的市匹配相等得出idx
 									if(shi.name == $shi_txt) {
 										$xianlist.empty();
-							    	    //console.log(item[idx].regions[idx]);
-										//console.log(shi.name);
 										//遍历第四遍，得出所包含的县并创建
 										$.each(shi.regions, function(idx, xian) {
 											var $xian_name = $('<option/>');
 
-											$xian_name.attr({
-												value: xian.name
-											}).html(xian.name).appendTo($xianlist);
+											$xian_name.attr({value: xian.name}).html(xian.name).appendTo($xianlist);
 										})
 									}
 
@@ -370,13 +317,15 @@ $(function($) {
 			data.xian = $input.eq(4).val();
 			data.dress = $input.eq(5).val();
 
-			//		datalist.push(data);
+			//datalist.push(data);
 			//保存到本地存储
-			localStorage.setItem('data', data);
-			//		console.log(JSON.parse(data))
+			localStorage.setItem('data',JSON.stringify(data));
+			//console.log(JSON.parse(data))
 			location.assign('zhongxin.html');
 		}
 	})
+	
+	
 });
 ;$(function($){
 	//懒加载效果
@@ -418,6 +367,16 @@ $(function($) {
 		}
 	});
 });
+;$(function($){
+	var $menu = $('.side-list');
+	var $btn = $('#memu-list');
+	
+	$btn.on('singleTap',function(){
+		$menu.fadeToggle();
+	})
+	
+});
+
 ;$(function($){
 	var $datalist = $('.dataList');
 	//读取本地存储
@@ -572,7 +531,9 @@ $(function($) {
 					'sum': index,
 					'goods':goods
 				};
-				str.push(obj);
+				if(obj.sum != 0){
+					str.push(obj);
+				}
 		} else { //如果localStorage不存在则设置一个空数组追加对象
 			str = [];
 			obj = {
@@ -580,7 +541,9 @@ $(function($) {
 				'sum': index,
 				'goods':goods
 			}
-			str.push(obj);
+			if(obj.sum != 0){
+				str.push(obj);
+			}
 		}
 		str = JSON.stringify(str); //将数组转换为字符串
 		var order = localStorage.setItem('order',str); //设置本地存储
@@ -602,25 +565,29 @@ $(function($) {
 	var shuju = JSON.parse(localStorage.getItem("order"));
 //	    console.log(shuju);
 	$.each(shuju,function(idx,item) {
-		$.each(item.goods, function(idx,item) {
-			console.log(item.price);
+		
+			var $dingdan1 = $("<div></div>");
+			var $dingdan1_1 = $("<div></div>");
+			$dingdan1_1.addClass("dingdan1_1");
+			//创建两个span  <span>店铺1</span><span>交易成功</span>放入 $dingdan1_1
+			var $span1 = $("<span></span>");
+			var $span2 = $("<span></span>");
+			$span1.html("店铺 <i>"+item.id+"</i>");
+			$span2.html("交易成功");
+			$span1.addClass("span1");
+			$span2.addClass("span2");
+			$dingdan1_1.addClass("dingdan1_1");
+			$span1.appendTo($dingdan1_1);
+			$span2.appendTo($dingdan1_1);
 			
-				var $dingdan1 = $("<div></div>");
-				var $dingdan1_1 = $("<div></div>");
-				var $dingdan1_2 = $("<div></div>");
-				var $dingdan1_3 = $("<div></div>");
-				var $dingdan1_4 = $("<div></div>");
-				//创建两个span  <span>店铺1</span><span>交易成功</span>放入 $dingdan1_1
-				var $span1 = $("<span></span>");
-				var $span2 = $("<span></span>");
-				$span1.html("店铺1");
-				$span2.html("交易成功");
-				$span1.addClass("span1");
-				$span2.addClass("span2");
-				$dingdan1_1.addClass("dingdan1_1");
-				$span1.appendTo($dingdan1_1);
-				$span2.appendTo($dingdan1_1);
-//				  <div class="dingdan1_2">
+			 $dingdan1_1.appendTo($dingdan1);
+
+		var total = 0;
+		$.each(item.goods, function(idx,item) {
+			var $dingdan1_2 = $("<div></div>");
+			 $dingdan1_2.addClass("dingdan1_2");
+			
+			//				  <div class="dingdan1_2">
 //              	<div class="dingdan1_2_1">
 //              		<img src="../img/56.jpg"/>
 //              	</div>
@@ -630,48 +597,55 @@ $(function($) {
 //              		<span>数量</span>
 //              	</div>
 //              </div>	
-                var $dingdan1_2_1 = $("<div></div>");
-                var $dingdan1_2_2 = $("<div></div>");
-                var $oimg= $("<img />");
-                $oimg.attr("src",item.img);
-                $oimg.addClass("oimg");
-                $dingdan1_2_1.addClass("dingdan1_2_1");
-                $oimg.appendTo($dingdan1_2_1);
-                $dingdan1_2_1.appendTo($dingdan1_2);
-                
-                var $h22 = $("<h2></h2>");
-                var $span3 = $("<span></span>");
-				var $span4 = $("<span></span>");
-				$h22.html(item.title);
-				$span3.html(item.price);
-				$span4.html(item.count);
-				$span3.addClass("span3");
-				$span4.addClass("span4");
-				$dingdan1_2_2.addClass("dingdan1_2_2");
-				$h22.appendTo($dingdan1_2_2);
-				$span3.appendTo($dingdan1_2_2);
-				$span4.appendTo($dingdan1_2_2);
-				
-				$dingdan1_2.addClass("dingdan1_2");
-				$dingdan1_2_2.appendTo($dingdan1_2);
-				
+            var $dingdan1_2_1 = $("<div></div>");
+            var $dingdan1_2_2 = $("<div></div>");
+            var $oimg= $("<img />");
+            $oimg.attr("src",item.img);
+            $oimg.addClass("oimg");
+            $dingdan1_2_1.addClass("dingdan1_2_1");
+            $oimg.appendTo($dingdan1_2_1);
+            $dingdan1_2_1.appendTo($dingdan1_2);
+            
+            var $h22 = $("<p></p>");
+            var $span3 = $("<span></span>");
+			var $span4 = $("<span></span>");
+			$h22.html(item.title);
+			$span3.html('&yen;'+item.price);
+			$span4.html('&times;'+item.count);
+			$span3.addClass("span3");
+			$span4.addClass("span4");
+			$dingdan1_2_2.addClass("dingdan1_2_2");
+			$h22.appendTo($dingdan1_2_2);
+			$span3.appendTo($dingdan1_2_2);
+			$span4.appendTo($dingdan1_2_2);
+			
+			$dingdan1_2.addClass("dingdan1_2");
+			$dingdan1_2_2.appendTo($dingdan1_2);
+			 $dingdan1_2.appendTo($dingdan1);
+			
+			total += item.price * item.count;
+		});
+	
+		var $dingdan1_3 = $("<div></div>");
+		var $dingdan1_4 = $("<div></div>");
+	
 //				  <div class="dingdan1_3">
 //              	<h3 class="hh3">共<b>2</b>件商品：合计 ￥<span>240</span></h3>
 //              </div>	
-                var $hh3 = $("<h3></h3>");
-                var $b = $("<b></b>");
-                 var $b1 = $("<b></b>");
-                var $span5 = $("<span></span>");
-                $b.html(item.count);
-                 $b1.html("件商品：合计 ￥");
-                $span5.html(item.count*item.price);
-                $hh3.addClass("hh3");
-                
-                $b.appendTo($hh3);
-                $b1.appendTo($hh3);
-                $span5.appendTo($hh3);
-                $hh3.appendTo($dingdan1_3);
-                
+        var $hh3 = $("<p></p>");
+        var $b = $("<b></b>");
+         var $b1 = $("<b></b>");
+        var $span5 = $("<span></span>");
+        $b.html(item.sum);
+         $b1.html("件商品：合计 ￥");
+        $span5.html(total);
+        $hh3.addClass("hh3");
+        
+        $b.appendTo($hh3);
+        $b1.appendTo($hh3);
+        $span5.appendTo($hh3);
+        $hh3.appendTo($dingdan1_3);
+        
 //              <div class="dingdan1_4">
 //              	<span>
 //	                	 <button>付款</button>
@@ -679,53 +653,48 @@ $(function($) {
 //	                	 <button>查看物流</button>
 //              	</span>
 //              </div>	
-                var $span5 = $("<span></span>");
-                var $buttom1 = $("<button></button>");
-                var $buttom2 = $("<button></button>");
-                var $buttom3 = $("<button></button>");
-                $buttom1.html("付款");
-                $buttom2.html("删除订单");
-                $buttom3.html("查看物流");
-                $span5.addClass("span5");
-                $buttom1.addClass("button1"); 
-                $buttom2.addClass("button2");
-                $buttom3.addClass("button1");
-                $buttom1.appendTo($span5);
-                $buttom2.appendTo($span5);
-                $buttom3.appendTo($span5);
-                $span5.appendTo($dingdan1_4);
-                
-                
-                $dingdan1_1.addClass("dingdan1_1");
-                $dingdan1_2.addClass("dingdan1_2");
-                $dingdan1_3.addClass("dingdan1_3");
-                $dingdan1_4.addClass("dingdan1_4");
-                $dingdan1.addClass("dingdan1");
-                
-                $dingdan1_1.appendTo($dingdan1);
-                $dingdan1_2.appendTo($dingdan1);
-                $dingdan1_3.appendTo($dingdan1);
-                $dingdan1_4.appendTo($dingdan1);
-                
-                $dingdan1.appendTo($DDsection);
-                
-                //点击取消订单
+        var $span5 = $("<span></span>");
+        var $buttom1 = $("<button></button>");
+        var $buttom2 = $("<button></button>");
+        var $buttom3 = $("<button></button>");
+        $buttom1.html("付款");
+        $buttom2.html("删除订单");
+        $buttom3.html("查看物流");
+        $span5.addClass("span5");
+        $buttom1.addClass("button1"); 
+        $buttom2.addClass("button2");
+        $buttom3.addClass("button1");
+        $buttom1.appendTo($span5);
+        $buttom2.appendTo($span5);
+        $buttom3.appendTo($span5);
+        $span5.appendTo($dingdan1_4);
+        
+       
+        $dingdan1_3.addClass("dingdan1_3");
+        $dingdan1_4.addClass("dingdan1_4");
+        $dingdan1.addClass("dingdan1");
+        
+       
+       
+        $dingdan1_3.appendTo($dingdan1);
+        $dingdan1_4.appendTo($dingdan1);
+        
+        $dingdan1.appendTo($DDsection);
+        
+        //点击取消订单
 //              var btn2 = $(".button2");
-                    
-                $buttom2.on("singleTap",function(){
-                	console.log("aa");
-                	$buttom2.closest($dingdan1).remove();
-              	   localStorage.removeItem("order");
-                 
-                })
-                
-			
-		});
+            
+        $buttom2.on("singleTap",function(){
+        	$buttom2.closest($dingdan1).remove();
+        	for(var i=0;i<shuju.length;i++){
+        		if(shuju[i].id == $(this).closest('.dingdan1').find('.dingdan1_1 i').html()){
+        			shuju.splice(i,1);
+		      	   localStorage.setItem('order',JSON.stringify(shuju));
+        		}
+        	}
+         
+        });
 	});
-	
-	
-	
-	
 //	$.ajax({
 //		type:"get",
 //		url:"../data/submit.json",
@@ -847,4 +816,18 @@ $(function($) {
 //		}
 //		
 //	});
+});
+
+;$(function($){
+	
+	var $ziliao = $('#ziliao');
+	
+	var mydata = localStorage.getItem('data');
+	
+	console.log(mydata);
+	if(mydata){
+		$ziliao.html('我的资料');
+	}else{
+		$ziliao.html('完善资料');
+	}
 });

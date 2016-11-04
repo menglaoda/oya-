@@ -1,54 +1,14 @@
+body {
+  background: #f1f5f6;
+}
 
 .DDsection {
   font-size: 14px;
+  margin-bottom: 54px;
 }
-
 
 .section {
   margin: 48px 0 54px;
-}
-
-@charset "UTF-8";
-/*哈哈哈，小豆比*/
-body {
-  font-family: "微软雅黑";
-  font-size: 13px;
-  margin: 0;
-  padding: 0;
-  background: #f1f5f6;
-  color: #000;
-}
-
-a {
-  text-decoration: none;
-  color: #555555;
-
-}
-
-.header {
-  height: 48px;
-  display: flex;
-
-  background-color: #8E488E;
-
-  line-height: 48px;
-  text-align: center;
-}
-
-.header span {
-  color: white;
-}
-
-.header span:first-child {
-  flex: 1;
-}
-
-.header span:nth-child(2) {
-  flex: 9;
-}
-
-.header span:last-child {
-  flex: 1;
 }
 
 .box1 {
@@ -61,10 +21,8 @@ a {
 
 .box1 div:first-child {
   flex: 2;
-
   margin-top: 20px;
   margin-left: 10px;
-
 }
 
 .box1 div:first-child img {
@@ -104,7 +62,6 @@ a {
   display: flex;
   list-style: none;
   margin-top: 0px;
-
 }
 
 .box2 li {
@@ -112,6 +69,11 @@ a {
   height: 40px;
   text-align: center;
   margin-top: 10px;
+}
+
+.box2 li a {
+  color: #000;
+  text-decoration: none;
 }
 
 .box2 li:nth-child(1) {
@@ -142,27 +104,21 @@ a {
   display: flex;
   flex-direction: row;
   flex: 1;
-
   margin: 0;
   padding: 10px 0;
-
 }
 
 .box3 div li {
   list-style: none;
   line-height: 36px;
-
   height: 36px;
-  color: #999;
-
+  color: #333;
 }
 
 .box3 div li:first-child {
   flex: 0.8;
-
   margin-left: 10px;
   margin-right: 10px;
-
 }
 
 .box3 div li:first-child span:first-child {
@@ -177,7 +133,6 @@ a {
 .box3 .icon-icon01, .icon-huiyuan, .icon-huiyuan1 {
   color: white;
 }
-
 
 .box3 div:nth-child(2) li:first-child span:first-child {
   background: #4fc6ee;
@@ -198,9 +153,7 @@ a {
 }
 
 .box3 div li:nth-child(3) span {
-
   color: white;
-
   display: block;
   width: 20px;
   height: 20px;
@@ -210,9 +163,7 @@ a {
   position: absolute;
   right: 10px;
   top: 8px;
-
   background: #8E488E;
-
 }
 
 .box3 div li:nth-child(4) {
@@ -224,17 +175,19 @@ a {
   border-bottom: solid 1px #e7eaec;
 }
 
-
 .box4 .icon-dingdan, .icon-trophyfill, .icon-ziliaotianxie {
   color: white;
 }
-
 
 .box4 {
   display: flex;
   flex-direction: column;
   margin-top: 22px;
   background: white;
+}
+
+.box4 a {
+  text-decoration: none;
 }
 
 .box4 div {
@@ -246,26 +199,20 @@ a {
   display: flex;
   flex-direction: row;
   flex: 1;
-
   margin: 0;
   padding: 10px 0;
-
 }
 
 .box4 div li {
   list-style: none;
   line-height: 36px;
-
-  color: #999;
-
+  color: #333;
 }
 
 .box4 div li:first-child {
   flex: 0.8;
-
   margin-left: 10px;
   margin-right: 10px;
-
 }
 
 .box4 div li:first-child span:first-child {
@@ -277,11 +224,9 @@ a {
   text-align: center;
 }
 
-
 .box4 div li a {
-  color: #999;
+  color: #333;
 }
-
 
 .box4 div:nth-child(2) li:first-child span:first-child {
   background: #4fc6ee;
@@ -304,21 +249,19 @@ a {
   border-bottom: solid 1px #e7eaec;
 }
 
-
-
 .nav {
   display: flex;
   border-bottom: solid 1px #cccccc;
   margin-top: 48px;
   padding: 10px 0;
-
+  background: #fff;
+  margin-bottom: 12px;
 }
 
 .nav ul {
   display: flex;
   flex: 1;
   list-style: none;
-
 }
 
 .nav li {
@@ -329,11 +272,9 @@ a {
   line-height: 30px;
 }
 
-
 .nav li:first-child {
   border: 0;
 }
-
 
 .dingdan1 {
   background: white;
@@ -347,17 +288,17 @@ a {
   border-top: solid 1px #cccccc;
 }
 
+.dingdan1 i {
+  font-style: normal;
+}
 
 .dingdan1_1 .span1 {
-
   flex: 1;
   text-align: left;
   margin-left: 10px;
 }
 
-
 .dingdan1_1 .span2 {
-
   flex: 1;
   text-align: right;
   margin-right: 10px;
@@ -370,9 +311,7 @@ a {
   padding: 10px 0;
 }
 
-
 .oimg {
-
   width: 80px;
   height: 90px;
 }
@@ -386,7 +325,6 @@ a {
   position: relative;
 }
 
-
 .span3 {
   color: #F1286A;
   margin-top: 30px;
@@ -394,7 +332,6 @@ a {
 }
 
 .span4 {
-
   position: absolute;
   right: 20px;
   margin-top: 40px;
@@ -408,9 +345,7 @@ a {
   position: relative;
 }
 
-
 .hh3 {
-
   flex: 1;
   position: absolute;
   right: 20px;
@@ -428,13 +363,10 @@ a {
   border-top: solid 1px #cccccc;
 }
 
-
 .span5 {
-
   flex: 1;
   margin-right: 20px;
 }
-
 
 .button1 {
   margin-left: 10px;
@@ -455,4 +387,3 @@ a {
 .footer ul li:last-child a {
   color: #8E488E;
 }
-

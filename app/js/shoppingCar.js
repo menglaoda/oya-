@@ -152,7 +152,9 @@
 					'sum': index,
 					'goods':goods
 				};
-				str.push(obj);
+				if(obj.sum != 0){
+					str.push(obj);
+				}
 		} else { //如果localStorage不存在则设置一个空数组追加对象
 			str = [];
 			obj = {
@@ -160,7 +162,9 @@
 				'sum': index,
 				'goods':goods
 			}
-			str.push(obj);
+			if(obj.sum != 0){
+				str.push(obj);
+			}
 		}
 		str = JSON.stringify(str); //将数组转换为字符串
 		var order = localStorage.setItem('order',str); //设置本地存储

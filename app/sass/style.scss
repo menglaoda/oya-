@@ -1,31 +1,8 @@
-$one:#387ef5;
-$tow:lighten($one,10%);
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-.DDsection{font-size: 14px;}
->>>>>>> 66cf60325e9759735ab4487318eab41a1e0dbb2e
-.section{margin: 48px 0 54px;}
-=======
-/*哈哈哈，小豆比*/
-body{font-family: "微软雅黑";font-size: 13px;margin: 0;padding: 0;background: #f1f5f6;color: #000;}
- a{text-decoration: none;color: #555555;}
-//会员中心
-.header{
-    height: 48px;
-    display: flex;
-    background-color: #8E488E;
-    line-height: 48px;
-    text-align: center;
+body{
+    background: #f1f5f6;    
 }
-.header span{color: white;}
-.header span:first-child{flex:1 ;}
-.header span:nth-child(2){flex: 9;}
-.header span:last-child{flex:1 ;}
-
-
->>>>>>> 82bb620f49f154729c17a5bc148d37701c85f89f
+.DDsection{font-size: 14px;margin-bottom: 54px;}
+.section{margin: 48px 0 54px;}
 .box1{display: flex;height: 85px;overflow: hidden;
     background: linear-gradient(to left,#5b2a1b,#1b0512);color:white;
 }
@@ -44,6 +21,7 @@ body{font-family: "微软雅黑";font-size: 13px;margin: 0;padding: 0;background
 .box2 li{flex: 1;height: 40px; text-align: center;   
      margin-top: 10px;   
 }
+.box2 li a{color: #000;text-decoration: none;}
 .box2 li:nth-child(1){border-right: solid 1px #cccccc;}
 .box2 li:nth-child(2){border-right: solid 1px #cccccc;}
 .box2 li p:nth-child(2){margin-top: 5px;color: #cccccc;}
@@ -51,7 +29,7 @@ body{font-family: "微软雅黑";font-size: 13px;margin: 0;padding: 0;background
 .box3{display: flex;flex-direction: column;background: white;}
 .box3 div{ height: 50px;border-top: solid 1px #e7eaec;}
 .box3 div ul{display: flex;flex-direction: row;flex: 1;margin: 0;padding: 10px 0;}
-.box3 div li{list-style: none;line-height: 36px;height: 36px;color: #999;}
+.box3 div li{list-style: none;line-height: 36px;height: 36px;color: #333;}
 .box3 div li:first-child{flex: 0.8;margin-left: 10px;margin-right: 10px;}   
 .box3 div li:first-child span:first-child{
      display: block;
@@ -90,9 +68,10 @@ body{font-family: "微软雅黑";font-size: 13px;margin: 0;padding: 0;background
     color: white;
 }  
 .box4{display: flex;flex-direction: column;margin-top: 22px;background: white;}
+.box4 a{text-decoration: none;}
 .box4 div{ height: 50px;border-top: solid 1px #e7eaec;}
 .box4 div ul{display: flex;flex-direction: row;flex: 1;margin: 0;padding: 10px 0;}
-.box4 div li{list-style: none;line-height: 36px;color: #999;}
+.box4 div li{list-style: none;line-height: 36px;color: #333;}
 .box4 div li:first-child{flex: 0.8;margin-left: 10px;margin-right: 10px;}   
 .box4 div li:first-child span:first-child{
      display: block;
@@ -102,7 +81,7 @@ body{font-family: "微软雅黑";font-size: 13px;margin: 0;padding: 0;background
      text-align: center;
      }
 .box4 div li a{
-    color: #999;
+    color: #333;
 }
 .box4 div:nth-child(2) li:first-child span:first-child{
     background: #4fc6ee;
@@ -115,13 +94,14 @@ body{font-family: "微软雅黑";font-size: 13px;margin: 0;padding: 0;background
 .box4 div li:nth-child(3){flex: 0.7;text-align: center;}  
 .box4 div:nth-child(3){border-bottom: solid 1px #e7eaec;}
 //我的订单
-.nav{display: flex;border-bottom: solid 1px #cccccc;margin-top: 48px;padding: 10px 0;}
+.nav{display: flex;border-bottom: solid 1px #cccccc;margin-top: 48px;padding: 10px 0;background: #fff;margin-bottom: 12px;}
 .nav ul{display: flex;flex: 1;list-style: none;}
 .nav li{height: 30px;flex: 1;text-align: center;border-left: solid 1px #cccccc;line-height: 30px;}
 .nav li:first-child{border: 0;}
 
 .dingdan1{background: white; margin-bottom: 12px;}
 .dingdan1_1{height: 40px;display: flex;line-height: 40px;border-top: solid 1px #cccccc;}
+.dingdan1 i{font-style: normal;}
 .dingdan1_1 .span1{flex: 1;text-align: left;margin-left: 10px;}
 .dingdan1_1 .span2{flex: 1;text-align: right;margin-right: 10px;color: #F1286A;}
 

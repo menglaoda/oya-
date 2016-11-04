@@ -9,7 +9,22 @@ $(function($) {
 	var $shilist = $('#shilist');
 	var $xian = $('#xian');
 	var $xianlist = $('#xianlist');
-
+    var $title = $('#title');
+    //读取我的资料
+        
+    var mydata =JSON.parse(localStorage.getItem('data')) ;
+    if(mydata){
+    	$title.html('我的资料');
+    	
+    	$input.eq(0).val(mydata.name) ;
+		  $input.eq(1).val(mydata.phone);
+		  $input.eq(2).val(mydata.sheng);
+		 $input.eq(3).val(mydata.shi);
+		 $input.eq(4).val(mydata.xian) ;
+		  $input.eq(5).val(mydata.dress);
+		  
+		  
+    }
 	//昵称验证
 	$input.eq(0).on('blur', function() {
 			var txt = $input.eq(0).val();
@@ -112,11 +127,13 @@ $(function($) {
 			data.xian = $input.eq(4).val();
 			data.dress = $input.eq(5).val();
 
-			//		datalist.push(data);
+			//datalist.push(data);
 			//保存到本地存储
-			localStorage.setItem('data', data);
-			//		console.log(JSON.parse(data))
+			localStorage.setItem('data',JSON.stringify(data));
+			//console.log(JSON.parse(data))
 			location.assign('zhongxin.html');
 		}
 	})
+	
+	
 });

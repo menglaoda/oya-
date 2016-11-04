@@ -33,6 +33,10 @@ body {
   /*头部标题*/
 }
 
+.header a {
+  color: #fff;
+}
+
 .header .title {
   position: absolute;
   left: 40px;

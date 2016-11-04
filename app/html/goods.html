@@ -6,27 +6,40 @@
 	<title>商品详情页</title>
 	<link rel="stylesheet" href="../assets/bootstrap/dist/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="../assets/swiper/swiper.min.css" />
+	<link rel="stylesheet" href="../assets/fontAwesome/css/font-awesome.min.css" />
+	
 	<link rel="stylesheet" href="../css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../css/popup_menu.css"/>
 	<link rel="stylesheet" href="../css/goods.css">
 	<!-- 评论 -->
 	<script type="text/javascript" src="../assets/jquery/jquery.min.js" ></script>
 	<script type="text/javascript" src="../assets/zepto/dist/zepto.min.js" ></script>
 	<script type="text/javascript" src="../assets/zepto/src/touch.js" ></script>
 	<script type="text/javascript" src="../assets/swiper/swiper.jquery.min.js" ></script>
+	<script src="../js/popup_menu.js"></script>
 	<script src="../js/goods.js"></script>
 
 </head>
 <body>
 <header class="header">
-	<i class="fa fa-angle-left" id="memu-left"></i>
-	<ul class="ul-li">
+		<a href="list.html"><i class="fa fa-angle-left" id="memu-left"></i>
+	<ul class="ul-li"></a>
 		<li class="title1 active">商品详情</li>
 		<li class="title2">评论</li>
 	</ul>
-	<i class="fa fa-list-ul" id="memu-list"></i>
+	<i class="fa fa-list-ul" id="memu-list" style="top:0px;"></i>
 </header>
-
-
+<!-- popup_menu-->
+<aside class="side-list">
+	<ul>
+		<li><a href="../index.html">首页</a></li>
+		<li><a href="#">积分区</a></li>
+		<li><a href="#">夺宝区</a></li>
+		<li><a href="list.html">分类</a></li>
+		<li><a href="shoppingCar.html">购物车</a></li>
+		<li><a href="zhongxin.html">个人中心</a></li>
+	</ul>
+</aside>
 <div class="goods">
 	<div class="swiper-container">
         <div class="swiper-wrapper">
@@ -38,8 +51,7 @@
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
 	</div>
- 	
-	<div class="xinxi">
+ 	<div class="xinxi">
 		<p class="namee">气温印花黑灰色短袖连衣裙</p>
 		<p class="price">&yen;<i>120</i></p>
 	</div>
