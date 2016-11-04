@@ -1,5 +1,7 @@
 ;$(function(){
 
+        
+
      	var swiper = new Swiper('.swiper-container', {
 	        pagination: '.swiper-pagination',
 	        // paginationClickable: true,
@@ -197,7 +199,22 @@ $(function($) {
 	var $shilist = $('#shilist');
 	var $xian = $('#xian');
 	var $xianlist = $('#xianlist');
-
+    var $title = $('#title');
+    //读取我的资料
+        
+    var mydata =JSON.parse(localStorage.getItem('data')) ;
+    if(mydata){
+    	$title.html('我的资料');
+    	
+    	$input.eq(0).val(mydata.name) ;
+		  $input.eq(1).val(mydata.phone);
+		  $input.eq(2).val(mydata.sheng);
+		 $input.eq(3).val(mydata.shi);
+		 $input.eq(4).val(mydata.xian) ;
+		  $input.eq(5).val(mydata.dress);
+		  
+		  
+    }
 	//昵称验证
 	$input.eq(0).on('blur', function() {
 			var txt = $input.eq(0).val();
@@ -300,13 +317,15 @@ $(function($) {
 			data.xian = $input.eq(4).val();
 			data.dress = $input.eq(5).val();
 
-			//		datalist.push(data);
+			//datalist.push(data);
 			//保存到本地存储
-			localStorage.setItem('data', data);
-			//		console.log(JSON.parse(data))
+			localStorage.setItem('data',JSON.stringify(data));
+			//console.log(JSON.parse(data))
 			location.assign('zhongxin.html');
 		}
 	})
+	
+	
 });
 ;$(function($){
 	//懒加载效果
@@ -512,7 +531,9 @@ $(function($) {
 					'sum': index,
 					'goods':goods
 				};
-				str.push(obj);
+				if(obj.sum != 0){
+					str.push(obj);
+				}
 		} else { //如果localStorage不存在则设置一个空数组追加对象
 			str = [];
 			obj = {
@@ -520,7 +541,9 @@ $(function($) {
 				'sum': index,
 				'goods':goods
 			}
-			str.push(obj);
+			if(obj.sum != 0){
+				str.push(obj);
+			}
 		}
 		str = JSON.stringify(str); //将数组转换为字符串
 		var order = localStorage.setItem('order',str); //设置本地存储
@@ -793,4 +816,18 @@ $(function($) {
 //		}
 //		
 //	});
+});
+
+;$(function($){
+	
+	var $ziliao = $('#ziliao');
+	
+	var mydata = localStorage.getItem('data');
+	
+	console.log(mydata);
+	if(mydata){
+		$ziliao.html('我的资料');
+	}else{
+		$ziliao.html('完善资料');
+	}
 });
