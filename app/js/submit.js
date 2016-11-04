@@ -6,9 +6,9 @@
 	$.each(shuju,function(idx,item) {
 		
 		$.each(item.goods, function(idx,item) {
-			console.log(idx);
+		
 			console.log(item.price);
-			
+			console.log(item);
 				var $dingdan1 = $("<div></div>");
 				var $dingdan1_1 = $("<div></div>");
 				var $dingdan1_2 = $("<div></div>");
@@ -24,7 +24,7 @@
 				$dingdan1_1.addClass("dingdan1_1");
 				$span1.appendTo($dingdan1_1);
 				$span2.appendTo($dingdan1_1);
-//				  <div class="dingdan1_2">
+//				<div class="dingdan1_2">
 //              	<div class="dingdan1_2_1">
 //              		<img src="../img/56.jpg"/>
 //              	</div>
