@@ -1,85 +1,99 @@
-.boxx{
-	margin: 48px 0 54px;
-	overflow: hidden;
+@charset "UTF-8";
+.boxx {
+  margin: 48px 0 54px;
+  overflow: hidden;
 }
-.list{
-	float: left;
-	background:#f1f5f6;
-	width:20%;
-}
-/*左侧*/
-.list-brand{
-	width: 100%;
-	margin: 1px 0;
-	float: left;
-	font-size: 14px;
-}
-.list-brand .active{
-	color:#ff1626;
-	background:#f1f5f6;
-}
-.list-brand li{
-	background:#fff;
-	cursor: pointer;
-	height: 40px;
-	line-height: 40px;
-	text-align: center;
-	border:1px solid #f1f5f6;
-	border-left: none;
-	border-right: 10px solid #f1f5f6;
-}
-/*右侧大盒子2个div*/
-.allRight{
-	width: 78%;
-	float:left;
-}
-.rightt{
-	position: absolute;
-	overflow: hidden;
-	/*在y轴可以滚动*/
-	overflow-y: scroll;
-}
-.list-Img{
-	float:left;
-	width:100%;
-	
-}
-/*热门品牌*/
-.list-Img h4{
-	line-height: 40px;
-	text-align: left;
-	background:#f1f5f6;
-	margin: 0;
-}
-.list-Img .allUl {
-	width: 100%;
-	display: block;
-	overflow: hidden;
 
-	background: #fff;
-}	
-.list-Img .allUl li{
-	width: 30%;
-	height: 50%;
-	float: left;
-	margin:5px 5px 0 0;
+.boxx .list {
+  float: left;
+  background: #f1f5f6;
+  width: 20%;
 }
-.list-Img .allUl li a{display: block;}
-.list-Img .allUl li  img{
-	margin:5px 5px;
-	width: 100%;
-	
+
+/*左侧*/
+.boxx .list .list-brand {
+  width: 100%;
+  margin: 1px 0;
+  float: left;
+  font-size: 14px;
+}
+
+.boxx .list .list-brand .active {
+  color: #ff1626;
+  background: #f1f5f6;
+}
+
+.boxx .list .list-brand li {
+  background: #fff;
+  cursor: pointer;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border: 1px solid #f1f5f6;
+  border-left: none;
+  border-right: 10px solid #f1f5f6;
+}
+
+/*右侧大盒子2个div*/
+.boxx .allRight {
+  width: 78%;
+  float: left;
+}
+
+.boxx .allRight .rightt {
+  position: absolute;
+  overflow: hidden;
+  /*在y轴可以滚动*/
+  overflow-y: scroll;
+}
+
+.boxx .allRight .rightt .list-Img {
+  float: left;
+  width: 100%;
+}
+
+/*热门品牌*/
+.boxx .allRight .rightt .list-Img h4 {
+  line-height: 40px;
+  text-align: left;
+  background: #f1f5f6;
+  margin: 0;
+}
+
+.boxx .allRight .rightt .list-Img .allUl {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  background: #fff;
+}
+
+.boxx .allRight .rightt .list-Img .allUl li {
+  width: 30%;
+  height: 50%;
+  float: left;
+  margin: 5px 5px 0 0;
+}
+
+.boxx .allRight .rightt .list-Img .allUl li a {
+  display: block;
+}
+
+.boxx .allRight .rightt .list-Img .allUl li img {
+  margin: 5px 5px;
+  width: 100%;
 }
 
 /*ihone*/
-.list-Img .namee{
-	text-align: center;
-	height: 30px;
-	line-height: 30px;
-	font-size: 14px;
-	
+.boxx .allRight .rightt .list-Img .namee {
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
 }
 
+.footer {
+  font-size: 14px;
+}
 
 .footer ul li:nth-child(3) a {
   color: #8E488E;
