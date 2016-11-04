@@ -71,6 +71,11 @@ body {
   margin-top: 10px;
 }
 
+.box2 li a {
+  color: #000;
+  text-decoration: none;
+}
+
 .box2 li:nth-child(1) {
   border-right: solid 1px #cccccc;
 }
@@ -107,7 +112,7 @@ body {
   list-style: none;
   line-height: 36px;
   height: 36px;
-  color: #999;
+  color: #333;
 }
 
 .box3 div li:first-child {
@@ -201,7 +206,7 @@ body {
 .box4 div li {
   list-style: none;
   line-height: 36px;
-  color: #999;
+  color: #333;
 }
 
 .box4 div li:first-child {
@@ -220,7 +225,7 @@ body {
 }
 
 .box4 div li a {
-  color: #999;
+  color: #333;
 }
 
 .box4 div:nth-child(2) li:first-child span:first-child {
